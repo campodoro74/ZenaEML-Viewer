@@ -1,0 +1,59 @@
+From: Alice Example <alice@example.com>
+To: Bob Example <bob@example.com>
+Cc: Carol Example <carol@example.com>
+Subject: =?UTF-8?Q?Caf=C3=A9_meetup_on_Friday?=
+Date: Fri, 10 Apr 2026 14:30:00 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="OUT"
+
+--OUT
+Content-Type: multipart/related; boundary="MID"
+
+--MID
+Content-Type: multipart/alternative; boundary="IN"
+
+--IN
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi Bob,
+
+Let=E2=80=99s meet at the Caf=C3=A9 Central on Friday at 14:00.
+
+Cheers,
+Alice
+--IN
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html><body style=3D"font-family:sans-serif">
+  <p>Hi Bob,</p>
+  <p>Let=E2=80=99s meet at the <strong>Caf=C3=A9 Central</strong> on Friday at 14:00.</p>
+  <p><img src=3D"cid:logo@example" alt=3D"logo"></p>
+  <p>Cheers,<br>Alice</p>
+</body></html>
+--IN--
+
+--MID
+Content-Type: image/png; name="logo.png"
+Content-Disposition: inline; filename="logo.png"
+Content-ID: <logo@example>
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlse
+KgAAAABJRU5ErkJggg==
+--MID--
+
+--OUT
+Content-Type: application/pdf; name="agenda.pdf"
+Content-Disposition: attachment; filename="agenda.pdf"
+Content-Transfer-Encoding: base64
+
+JVBERi0xLjQKMSAwIG9iago8PC9UeXBlIC9DYXRhbG9nIC9QYWdlcyAyIDAgUj4+CmVuZG9iagoy
+IDAgb2JqCjw8L1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDE+PgplbmRvYmoKMyAw
+IG9iago8PC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgMjAwIDIwMF0g
+L1Jlc291cmNlcyA8PD4+Pj4KZW5kb2JqCnhyZWYKMCA0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAw
+MDAwMDAwMCAwMDAwMCBuIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTYgMDAwMDAgbiAK
+dHJhaWxlcgo8PC9TaXplIDQgL1Jvb3QgMSAwIFI+PgpzdGFydHhyZWYKMTk2CiUlRU9GCg==
+--OUT--

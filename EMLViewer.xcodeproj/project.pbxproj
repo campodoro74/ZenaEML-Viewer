@@ -1,0 +1,966 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2A3B4C5D60718293A4B5E6F /* NestedRFC822Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2A3B4C5D60718293A4B5E /* NestedRFC822Tests.swift */; };
+		D9F02B3C5E7081A2B3C4D5E6 /* zena-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C8E91A2B4D6F8091A2B3C4D5 /* zena-logo.png */; };
+		B2C3D4E5F60718293A4B5C6D /* PreviewHTMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* PreviewHTMLTests.swift */; };
+		7A202273F2E9405DA1EBF02E /* PreviewHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A79930EBE6E4EB5A981F038 /* PreviewHTML.swift */; };
+		7D614EEDC88D49DE971B6959 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FC20E7D6E44BDA8A5A6C45 /* PreviewProvider.swift */; };
+		FB52431542EE4806AA18C6C9 /* EMLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3588853051FD35CB996A4581 /* EMLCore.framework */; };
+		1923B28176C94660B097D909 /* EMLViewerQuickLook.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 524B383F2B204C0880D9FEE2 /* EMLViewerQuickLook.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		073CF1E195C4D62A5DF207B1 /* MSG.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9346F5A92611C95CD18D62 /* MSG.swift */; };
+		1125E89FEEC0F8B65FEDBAEF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5D03C429C4961D93A4790 /* WebView.swift */; };
+		16A8777B2561D857F0B738F6 /* EMLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3588853051FD35CB996A4581 /* EMLCore.framework */; };
+		18F327BE1DA056D1CCD38B5C /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478F62C22E29C0C5B38DD7BB /* AppPreferences.swift */; };
+		24D453F3C4599784DC013671 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA93DD6EAA76EE55B50A7AC /* Appearance.swift */; };
+		2E1B8D6CCDB02DCF0051D0E9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264DFBFC41A217F0760E622 /* Message.swift */; };
+		3383AFD03D2E0FCED3C7BAC0 /* EMLViewerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BBAEAC864D30481181632 /* EMLViewerApp.swift */; };
+		3E5AC88A38981B30A73E314B /* sample.eml in Resources */ = {isa = PBXBuildFile; fileRef = 4A97FAAAF1DB818440AE77D1 /* sample.eml */; };
+		40FB7ABB74460C73C7F1C7EC /* MIMETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF6335ED8D482F887165D0C /* MIMETests.swift */; };
+		5803BC294A399CF05577AF58 /* sample.msg in Resources */ = {isa = PBXBuildFile; fileRef = 2102504DFB0E2E0F6FDC3058 /* sample.msg */; };
+		5A20A6E58E713A9379BBDE91 /* SampleFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F97D4A01BD707836BA76A /* SampleFixtureTests.swift */; };
+		6732488D722007DC59C00F37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894CFF355D5B5A655AF6FF4E /* ContentView.swift */; };
+		6D05C4A47693333151729606 /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84B0418D3FEC2BE6490705 /* Decoding.swift */; };
+		76601520C55DDCA9014FE129 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B2997EBD993F2D5C1285 /* AppState.swift */; };
+		85A06E11040BA758C27EBEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4CC6CA60D90F4419A982AB8 /* Assets.xcassets */; };
+		915E82963E9F3C6C9D0685AA /* DecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454D70E955E24906CF18544E /* DecodingTests.swift */; };
+		A5694D369924DB7D733A00A5 /* EMLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3588853051FD35CB996A4581 /* EMLCore.framework */; };
+		B12E4B9454F0DB5FCBC87274 /* EMLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3588853051FD35CB996A4581 /* EMLCore.framework */; };
+		B8081FEE86C6949E0298F1AB /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07F21FAD82BB9995578D51 /* WelcomeView.swift */; };
+		BA5981D2C40AB3BBC4F58420 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = D974D993616669BA79853549 /* github.png */; };
+		C309658841336529020B475E /* MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B67A36812A07BBECEE95689 /* MIME.swift */; };
+		C576310F5316C206E8BEFDEB /* MSGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C1549EE7F91EE1007E0807 /* MSGTests.swift */; };
+		E844C7B36327FDA3C9E99400 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23C324112938F4C6C0AA08 /* main.swift */; };
+		F3769B1B8EAE00683DD5B7D1 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B9D9FA9ECB8A9F927AFAEC /* MessageTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AC6C55C441262FE7E0E38CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9339FE29F56CDB6B99E6B6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 758CA4C1725D035BD4B74F4E;
+			remoteInfo = EMLCore;
+		};
+		4075587DE6307A0A723005BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9339FE29F56CDB6B99E6B6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 758CA4C1725D035BD4B74F4E;
+			remoteInfo = EMLCore;
+		};
+		9C033AD1712473A5DAC26A4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9339FE29F56CDB6B99E6B6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 758CA4C1725D035BD4B74F4E;
+			remoteInfo = EMLCore;
+		};
+		4A8DC127949A4020A167697C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9339FE29F56CDB6B99E6B6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 758CA4C1725D035BD4B74F4E;
+			remoteInfo = EMLCore;
+		};
+		4D84CD74107A49B4B336938A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9339FE29F56CDB6B99E6B6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 316E0CDB36CA4FA1A1D616CE;
+			remoteInfo = EMLViewerQuickLook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		059F97D4A01BD707836BA76A /* SampleFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFixtureTests.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B5C /* PreviewHTMLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHTMLTests.swift; sourceTree = "<group>"; };
+		E1F2A3B4C5D60718293A4B5E /* NestedRFC822Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedRFC822Tests.swift; sourceTree = "<group>"; };
+		18B9D9FA9ECB8A9F927AFAEC /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		1F23C324112938F4C6C0AA08 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1FF6335ED8D482F887165D0C /* MIMETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIMETests.swift; sourceTree = "<group>"; };
+		2102504DFB0E2E0F6FDC3058 /* sample.msg */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.msg; sourceTree = "<group>"; };
+		3588853051FD35CB996A4581 /* EMLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = EMLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		454D70E955E24906CF18544E /* DecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingTests.swift; sourceTree = "<group>"; };
+		478F62C22E29C0C5B38DD7BB /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		4A97FAAAF1DB818440AE77D1 /* sample.eml */ = {isa = PBXFileReference; lastKnownFileType = text; path = sample.eml; sourceTree = "<group>"; };
+		4F07F21FAD82BB9995578D51 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		60C1549EE7F91EE1007E0807 /* MSGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGTests.swift; sourceTree = "<group>"; };
+		894CFF355D5B5A655AF6FF4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B67A36812A07BBECEE95689 /* MIME.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIME.swift; sourceTree = "<group>"; };
+		9DE5D03C429C4961D93A4790 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A019B2997EBD993F2D5C1285 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B264DFBFC41A217F0760E622 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B8F3D926B31D7775591302B3 /* EMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D407AB13908197DC998F4B /* EMLCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EMLCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F04655DB39B1885D1D7D84 /* emlcheck */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = emlcheck; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFA93DD6EAA76EE55B50A7AC /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		D974D993616669BA79853549 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		C8E91A2B4D6F8091A2B3C4D5 /* zena-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zena-logo.png"; sourceTree = "<group>"; };
+		DA84B0418D3FEC2BE6490705 /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
+		EC7BBAEAC864D30481181632 /* EMLViewerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLViewerApp.swift; sourceTree = "<group>"; };
+		F4CC6CA60D90F4419A982AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA9346F5A92611C95CD18D62 /* MSG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSG.swift; sourceTree = "<group>"; };
+		4A79930EBE6E4EB5A981F038 /* PreviewHTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHTML.swift; sourceTree = "<group>"; };
+		72FC20E7D6E44BDA8A5A6C45 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		524B383F2B204C0880D9FEE2 /* EMLViewerQuickLook.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EMLViewerQuickLook.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03801AE0F887FEBEA150F0BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5694D369924DB7D733A00A5 /* EMLCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154CB03F08AE2746E94E88C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B12E4B9454F0DB5FCBC87274 /* EMLCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBFD30ADCD56EF4E78844168 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16A8777B2561D857F0B738F6 /* EMLCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24D3E69BBCBA4B03BF476353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB52431542EE4806AA18C6C9 /* EMLCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CC5E4513BF5459D1DBAEA3E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A8093BD79D123870F813295A /* EMLCoreTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		70B7AFD4DF82F6DFDD048598 = {
+			isa = PBXGroup;
+			children = (
+				8054E431D93C2FF94FDE6750 /* Sources */,
+				6CC5E4513BF5459D1DBAEA3E /* Tests */,
+				C40489FF0AC8CCD740C7DD87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E92A2F4D4804F20B357DF7B /* EMLCore */ = {
+			isa = PBXGroup;
+			children = (
+				DA84B0418D3FEC2BE6490705 /* Decoding.swift */,
+				B264DFBFC41A217F0760E622 /* Message.swift */,
+				8B67A36812A07BBECEE95689 /* MIME.swift */,
+				FA9346F5A92611C95CD18D62 /* MSG.swift */,
+				4A79930EBE6E4EB5A981F038 /* PreviewHTML.swift */,
+			);
+			path = EMLCore;
+			sourceTree = "<group>";
+		};
+		8054E431D93C2FF94FDE6750 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CF8B41853F8D8E81B2140027 /* emlcheck */,
+				7E92A2F4D4804F20B357DF7B /* EMLCore */,
+				BC05E1D0CBF7304D534F89DE /* EMLViewer */,
+				D697F765B3B847CCA23F7F62 /* EMLViewerQuickLook */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		80F3BA349CDD773C952EA811 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				4A97FAAAF1DB818440AE77D1 /* sample.eml */,
+				2102504DFB0E2E0F6FDC3058 /* sample.msg */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		A8093BD79D123870F813295A /* EMLCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				80F3BA349CDD773C952EA811 /* Fixtures */,
+				454D70E955E24906CF18544E /* DecodingTests.swift */,
+				18B9D9FA9ECB8A9F927AFAEC /* MessageTests.swift */,
+				1FF6335ED8D482F887165D0C /* MIMETests.swift */,
+				60C1549EE7F91EE1007E0807 /* MSGTests.swift */,
+				059F97D4A01BD707836BA76A /* SampleFixtureTests.swift */,
+				A1B2C3D4E5F60718293A4B5C /* PreviewHTMLTests.swift */,
+				E1F2A3B4C5D60718293A4B5E /* NestedRFC822Tests.swift */,
+			);
+			path = EMLCoreTests;
+			sourceTree = "<group>";
+		};
+		BC05E1D0CBF7304D534F89DE /* EMLViewer */ = {
+			isa = PBXGroup;
+			children = (
+				DBD209E87143FC6B1BF9E41F /* Resources */,
+				CFA93DD6EAA76EE55B50A7AC /* Appearance.swift */,
+				478F62C22E29C0C5B38DD7BB /* AppPreferences.swift */,
+				A019B2997EBD993F2D5C1285 /* AppState.swift */,
+				894CFF355D5B5A655AF6FF4E /* ContentView.swift */,
+				EC7BBAEAC864D30481181632 /* EMLViewerApp.swift */,
+				9DE5D03C429C4961D93A4790 /* WebView.swift */,
+				4F07F21FAD82BB9995578D51 /* WelcomeView.swift */,
+			);
+			path = EMLViewer;
+			sourceTree = "<group>";
+		};
+		C40489FF0AC8CCD740C7DD87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9F04655DB39B1885D1D7D84 /* emlcheck */,
+				3588853051FD35CB996A4581 /* EMLCore.framework */,
+				B9D407AB13908197DC998F4B /* EMLCoreTests.xctest */,
+				B8F3D926B31D7775591302B3 /* EMLViewer.app */,
+				524B383F2B204C0880D9FEE2 /* EMLViewerQuickLook.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF8B41853F8D8E81B2140027 /* emlcheck */ = {
+			isa = PBXGroup;
+			children = (
+				1F23C324112938F4C6C0AA08 /* main.swift */,
+			);
+			path = emlcheck;
+			sourceTree = "<group>";
+		};
+		DBD209E87143FC6B1BF9E41F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4CC6CA60D90F4419A982AB8 /* Assets.xcassets */,
+				D974D993616669BA79853549 /* github.png */,
+				C8E91A2B4D6F8091A2B3C4D5 /* zena-logo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D697F765B3B847CCA23F7F62 /* EMLViewerQuickLook */ = {
+			isa = PBXGroup;
+			children = (
+				72FC20E7D6E44BDA8A5A6C45 /* PreviewProvider.swift */,
+			);
+			path = EMLViewerQuickLook;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06E021065FE9BE67380534F3 /* emlcheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F876EBF41886CF7EE65F684A /* Build configuration list for PBXNativeTarget "emlcheck" */;
+			buildPhases = (
+				C54ED9FB33E17925350426E3 /* Sources */,
+				BBFD30ADCD56EF4E78844168 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B804A87E1275647CCFA047C /* PBXTargetDependency */,
+			);
+			name = emlcheck;
+			packageProductDependencies = (
+			);
+			productName = emlcheck;
+			productReference = C9F04655DB39B1885D1D7D84 /* emlcheck */;
+			productType = "com.apple.product-type.tool";
+		};
+		2E88348857A929EE54D3DBEF /* EMLViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BAF96B53A13391141D5B2E78 /* Build configuration list for PBXNativeTarget "EMLViewer" */;
+			buildPhases = (
+				C105CEDEC59F776E7F88F635 /* Sources */,
+				2E34A8BBD1102EFA8C814E96 /* Resources */,
+				03801AE0F887FEBEA150F0BD /* Frameworks */,
+				829583A01A96488DB79FC300 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D21742D0DC63E05DA2375DE1 /* PBXTargetDependency */,
+				01B868B63CE846ABB4A84A43 /* PBXTargetDependency */,
+			);
+			name = EMLViewer;
+			packageProductDependencies = (
+			);
+			productName = EMLViewer;
+			productReference = B8F3D926B31D7775591302B3 /* EMLViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		758CA4C1725D035BD4B74F4E /* EMLCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2FD077CACFEA7F078F88EA0 /* Build configuration list for PBXNativeTarget "EMLCore" */;
+			buildPhases = (
+				E1AACA6599642CAFD5F4799C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EMLCore;
+			packageProductDependencies = (
+			);
+			productName = EMLCore;
+			productReference = 3588853051FD35CB996A4581 /* EMLCore.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
+		A89E23D0B96BAE55AA4D0324 /* EMLCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC3A14CD4FB8ABDC34689A9A /* Build configuration list for PBXNativeTarget "EMLCoreTests" */;
+			buildPhases = (
+				FBC4C1C79E249D65BE85DAFE /* Sources */,
+				DC5291A6A7F9E37B2E0EDB51 /* Resources */,
+				154CB03F08AE2746E94E88C3 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80BA9B7754A1CE69D40CA852 /* PBXTargetDependency */,
+			);
+			name = EMLCoreTests;
+			packageProductDependencies = (
+			);
+			productName = EMLCoreTests;
+			productReference = B9D407AB13908197DC998F4B /* EMLCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		316E0CDB36CA4FA1A1D616CE /* EMLViewerQuickLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BD5D2E8618948249C7CB574 /* Build configuration list for PBXNativeTarget "EMLViewerQuickLook" */;
+			buildPhases = (
+				71A7F786219445AA8B396627 /* Sources */,
+				24D3E69BBCBA4B03BF476353 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				589ED35156AC453A957DEF9D /* PBXTargetDependency */,
+			);
+			name = EMLViewerQuickLook;
+			packageProductDependencies = (
+			);
+			productName = EMLViewerQuickLook;
+			productReference = 524B383F2B204C0880D9FEE2 /* EMLViewerQuickLook.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9339FE29F56CDB6B99E6B6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					06E021065FE9BE67380534F3 = {
+						DevelopmentTeam = P675R8Z5DF;
+						ProvisioningStyle = Automatic;
+					};
+					2E88348857A929EE54D3DBEF = {
+						DevelopmentTeam = P675R8Z5DF;
+					};
+					316E0CDB36CA4FA1A1D616CE = {
+						DevelopmentTeam = P675R8Z5DF;
+						ProvisioningStyle = Automatic;
+					};
+					758CA4C1725D035BD4B74F4E = {
+						DevelopmentTeam = P675R8Z5DF;
+						ProvisioningStyle = Automatic;
+					};
+					A89E23D0B96BAE55AA4D0324 = {
+						DevelopmentTeam = P675R8Z5DF;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FD5741F7FC3197406A91C72A /* Build configuration list for PBXProject "EMLViewer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 70B7AFD4DF82F6DFDD048598;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C40489FF0AC8CCD740C7DD87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				758CA4C1725D035BD4B74F4E /* EMLCore */,
+				A89E23D0B96BAE55AA4D0324 /* EMLCoreTests */,
+				2E88348857A929EE54D3DBEF /* EMLViewer */,
+				316E0CDB36CA4FA1A1D616CE /* EMLViewerQuickLook */,
+				06E021065FE9BE67380534F3 /* emlcheck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E34A8BBD1102EFA8C814E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85A06E11040BA758C27EBEA8 /* Assets.xcassets in Resources */,
+				BA5981D2C40AB3BBC4F58420 /* github.png in Resources */,
+				D9F02B3C5E7081A2B3C4D5E6 /* zena-logo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC5291A6A7F9E37B2E0EDB51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5AC88A38981B30A73E314B /* sample.eml in Resources */,
+				5803BC294A399CF05577AF58 /* sample.msg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		829583A01A96488DB79FC300 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1923B28176C94660B097D909 /* EMLViewerQuickLook.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C105CEDEC59F776E7F88F635 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F327BE1DA056D1CCD38B5C /* AppPreferences.swift in Sources */,
+				76601520C55DDCA9014FE129 /* AppState.swift in Sources */,
+				24D453F3C4599784DC013671 /* Appearance.swift in Sources */,
+				6732488D722007DC59C00F37 /* ContentView.swift in Sources */,
+				3383AFD03D2E0FCED3C7BAC0 /* EMLViewerApp.swift in Sources */,
+				1125E89FEEC0F8B65FEDBAEF /* WebView.swift in Sources */,
+				B8081FEE86C6949E0298F1AB /* WelcomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C54ED9FB33E17925350426E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E844C7B36327FDA3C9E99400 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1AACA6599642CAFD5F4799C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D05C4A47693333151729606 /* Decoding.swift in Sources */,
+				C309658841336529020B475E /* MIME.swift in Sources */,
+				073CF1E195C4D62A5DF207B1 /* MSG.swift in Sources */,
+				2E1B8D6CCDB02DCF0051D0E9 /* Message.swift in Sources */,
+				7A202273F2E9405DA1EBF02E /* PreviewHTML.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC4C1C79E249D65BE85DAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				915E82963E9F3C6C9D0685AA /* DecodingTests.swift in Sources */,
+				40FB7ABB74460C73C7F1C7EC /* MIMETests.swift in Sources */,
+				C576310F5316C206E8BEFDEB /* MSGTests.swift in Sources */,
+				F3769B1B8EAE00683DD5B7D1 /* MessageTests.swift in Sources */,
+				5A20A6E58E713A9379BBDE91 /* SampleFixtureTests.swift in Sources */,
+				B2C3D4E5F60718293A4B5C6D /* PreviewHTMLTests.swift in Sources */,
+				F2A3B4C5D60718293A4B5E6F /* NestedRFC822Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71A7F786219445AA8B396627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D614EEDC88D49DE971B6959 /* PreviewProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4B804A87E1275647CCFA047C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 758CA4C1725D035BD4B74F4E /* EMLCore */;
+			targetProxy = 1AC6C55C441262FE7E0E38CF /* PBXContainerItemProxy */;
+		};
+		80BA9B7754A1CE69D40CA852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 758CA4C1725D035BD4B74F4E /* EMLCore */;
+			targetProxy = 9C033AD1712473A5DAC26A4F /* PBXContainerItemProxy */;
+		};
+		D21742D0DC63E05DA2375DE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 758CA4C1725D035BD4B74F4E /* EMLCore */;
+			targetProxy = 4075587DE6307A0A723005BC /* PBXContainerItemProxy */;
+		};
+		589ED35156AC453A957DEF9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 758CA4C1725D035BD4B74F4E /* EMLCore */;
+			targetProxy = 4A8DC127949A4020A167697C /* PBXContainerItemProxy */;
+		};
+		01B868B63CE846ABB4A84A43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 316E0CDB36CA4FA1A1D616CE /* EMLViewerQuickLook */;
+			targetProxy = 4D84CD74107A49B4B336938A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		165147EFD29A5DF85291EEC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		22A68759A26D70E16A307141 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Resources/EMLViewer-DeveloperID.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = P675R8Z5DF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLViewer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		294EAED2DD8823C745A9EDEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = P675R8Z5DF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		32ADBDDC33EDDEC8101C3A61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3F030E96D9B4C606977E6FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		9435817E406295F2D4B093B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = P675R8Z5DF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		A89101DBDB1EF2CF1A254C5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		AD4D2C395A6CC1E83740DB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.zenaemlviewer;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E1E91871DA880F135B5C8ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Resources/EMLViewer-Dev.entitlements";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = P675R8Z5DF;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLViewer;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E7ABA7A0E1D4504869A56164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.zenaemlviewer;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		20579010A3BF4C7284382023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Resources/EMLViewerQuickLook.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/EMLViewerQuickLook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLViewer.QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					QuickLookUI,
+				);
+				SKIP_INSTALL = YES;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		4098ACEA21194302B6E33FB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Resources/EMLViewerQuickLook.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = P675R8Z5DF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/EMLViewerQuickLook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = it.zenaconsult.ZenaEMLViewer.QuickLook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					QuickLookUI,
+				);
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2FD077CACFEA7F078F88EA0 /* Build configuration list for PBXNativeTarget "EMLCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89101DBDB1EF2CF1A254C5B /* Debug */,
+				3F030E96D9B4C606977E6FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BAF96B53A13391141D5B2E78 /* Build configuration list for PBXNativeTarget "EMLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1E91871DA880F135B5C8ECF /* Debug */,
+				22A68759A26D70E16A307141 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC3A14CD4FB8ABDC34689A9A /* Build configuration list for PBXNativeTarget "EMLCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32ADBDDC33EDDEC8101C3A61 /* Debug */,
+				165147EFD29A5DF85291EEC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F876EBF41886CF7EE65F684A /* Build configuration list for PBXNativeTarget "emlcheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7ABA7A0E1D4504869A56164 /* Debug */,
+				AD4D2C395A6CC1E83740DB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FD5741F7FC3197406A91C72A /* Build configuration list for PBXProject "EMLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				294EAED2DD8823C745A9EDEF /* Debug */,
+				9435817E406295F2D4B093B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0BD5D2E8618948249C7CB574 /* Build configuration list for PBXNativeTarget "EMLViewerQuickLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20579010A3BF4C7284382023 /* Debug */,
+				4098ACEA21194302B6E33FB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9339FE29F56CDB6B99E6B6B /* Project object */;
+}

@@ -1,0 +1,4 @@
+# Preserve CRLF line endings inside EML fixtures (RFC 822 is CRLF).
+Tests/EMLCoreTests/Fixtures/*.eml binary
+# .msg is a binary OLE2 compound file — must not be line-ending normalised.
+Tests/EMLCoreTests/Fixtures/*.msg binary
