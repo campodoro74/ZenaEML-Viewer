@@ -31,8 +31,30 @@ struct EMLViewerApp: App {
         .windowToolbarStyle(.unifiedCompact)
         .commands {
             CommandGroup(replacing: .newItem) {
-                Button("Open…") { state.openPanel() }
+                Button(L10n.t(.menuOpen)) { state.openPanel() }
                     .keyboardShortcut("o")
+            }
+            CommandGroup(after: .newItem) {
+                Button(L10n.t(.menuSaveEmailPDF)) { state.exportMessagePDF() }
+                    .keyboardShortcut("p")
+                    .disabled(state.message == nil)
+                Button(L10n.t(.menuSaveInvoicePDF)) {
+                    if let first = state.invoices.first { state.exportInvoicePDF(first) }
+                }
+                .disabled(state.invoices.isEmpty)
+            }
+            CommandMenu(L10n.t(.language)) {
+                ForEach(AppLanguage.allCases) { mode in
+                    Button {
+                        state.language = mode
+                    } label: {
+                        if state.language == mode {
+                            Label(mode.pickerLabel, systemImage: "checkmark")
+                        } else {
+                            Text(mode.pickerLabel)
+                        }
+                    }
+                }
             }
         }
     }

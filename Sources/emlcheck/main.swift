@@ -57,6 +57,12 @@ do {
         let name = p.filename ?? "-"
         print("  \(name)  \(p.contentType)  \(p.decodedBody().count)B")
     }
+
+    let invoices = FatturaPA.findInvoices(in: msg)
+    print("\n=== FatturaPA invoices (\(invoices.count)) ===")
+    for inv in invoices {
+        print("  \(inv.filename)  \(inv.xmlData.count)B  → \(FatturaPA.suggestedPDFFilename(for: inv))")
+    }
 } catch {
     FileHandle.standardError.write(Data("error: \(error)\n".utf8))
     exit(1)

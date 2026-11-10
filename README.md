@@ -1,21 +1,21 @@
 <p align="center">
-  <img src="Resources/AppIcon.source.png" alt="ZenaEML Viewer" width="160">
+  <img src="Resources/AppIcon.source.png" alt="ZenaEML Viewer to PDF" width="160">
 </p>
 
-# ZenaEML Viewer
+# ZenaEML Viewer to PDF
 
 **ZenaConsult** macOS app for reading saved email files without opening Mail or Outlook.
 
-Double‑click an `.eml`, `.emlx`, or Outlook `.msg` file to see headers, the message body (HTML or plain text), and attachments. Press **Space** in Finder for a Quick Look preview of the same content — including nested PEC / “email inside email” forwards.
+Double-click an `.eml`, `.emlx`, or Outlook `.msg` file to see headers, the message body (HTML or plain text), and attachments. Convert the whole email (or an Italian FatturaPA XML invoice inside it) to PDF. Press **Space** in Finder for a Quick Look preview of the same content, including nested PEC / email-inside-email forwards.
 
 ## Download
 
 Get the latest build from [Releases](https://github.com/campodoro74/ZenaEML-Viewer/releases/latest):
 
 1. Download **ZenaEML-Viewer.dmg**
-2. Open the disk image and drag **ZenaEML Viewer** into **Applications**
+2. Open the disk image and drag **ZenaEML Viewer to PDF** into **Applications**
 3. Open the app once, then optionally choose **Set as default for .eml and .msg**
-4. If Finder Quick Look still shows a weak preview: **System Settings → General → Login Items & Extensions → Quick Look** → enable **ZenaEML Viewer Quick Look**
+4. If Finder Quick Look still shows a weak preview: **System Settings → General → Login Items & Extensions → Quick Look** → enable **ZenaEML Viewer to PDF Quick Look**
 
 Requires **macOS 14** (Sonoma) or later. Universal binary (Apple silicon and Intel).
 
@@ -25,6 +25,8 @@ Requires **macOS 14** (Sonoma) or later. Universal binary (Apple silicon and Int
 | --- | --- |
 | Formats | `.eml`, `.emlx`, Outlook `.msg` |
 | View | From / To / Cc / Subject / Date, HTML or plain body, inline images |
+| PDF | Save the innermost nested email as PDF; append Italian FatturaPA when present |
+| Language | English / Italian (or follow System) |
 | Attachments | Open or save; nested `.eml` opens in the same window |
 | Finder | Quick Look (Space bar) and default “Open with” handler |
 | Offline | Everything stays on your Mac — no account, no cloud |

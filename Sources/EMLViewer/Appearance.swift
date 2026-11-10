@@ -10,9 +10,9 @@ enum AppearanceMode: String, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .system: return "System"
-        case .light:  return "Light"
-        case .dark:   return "Dark"
+        case .system: return L10n.t(.appearanceSystem)
+        case .light:  return L10n.t(.appearanceLight)
+        case .dark:   return L10n.t(.appearanceDark)
         }
     }
 

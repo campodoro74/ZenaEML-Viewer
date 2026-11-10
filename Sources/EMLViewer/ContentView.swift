@@ -35,6 +35,7 @@ struct ContentView: View {
         .onDrop(of: [.fileURL], isTargeted: nil) { providers in
             handleDrop(providers)
         }
+        .id(state.language)
     }
 
     private func applyAppearance(_ mode: AppearanceMode) {
@@ -170,10 +171,17 @@ struct ToastOverlay: View {
 
 struct MessageView: View {
     let message: Message
+    @EnvironmentObject var state: AppState
+
+    private var invoices: [FatturaInvoice] { FatturaPA.findInvoices(in: message) }
 
     var body: some View {
         VStack(spacing: 0) {
             HeaderPanel(message: message)
+            ConvertBar(hasInvoices: !invoices.isEmpty)
+            if !invoices.isEmpty {
+                InvoiceBar(invoices: invoices)
+            }
             Divider().opacity(0.6)
             BodyView(message: message)
             if !message.attachments.isEmpty {
@@ -184,21 +192,82 @@ struct MessageView: View {
     }
 }
 
+struct ConvertBar: View {
+    let hasInvoices: Bool
+    @EnvironmentObject var state: AppState
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "arrow.down.doc")
+                .foregroundStyle(.blue)
+            Text(hasInvoices ? L10n.t(.convertWithInvoice) : L10n.t(.convertInnermost))
+                .font(.system(size: 12, weight: .medium))
+            Spacer()
+            Button(L10n.t(.saveEmailPDF)) {
+                state.exportMessagePDF()
+            }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.small)
+            .keyboardShortcut("p", modifiers: [.command])
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 8)
+        .background(Color.accentColor.opacity(0.10))
+    }
+}
+
+struct InvoiceBar: View {
+    let invoices: [FatturaInvoice]
+    @EnvironmentObject var state: AppState
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "doc.richtext")
+                .foregroundStyle(.orange)
+            Text(invoices.count == 1
+                 ? L10n.tf(.invoiceFoundOne, invoices[0].filename)
+                 : L10n.tf(.invoicesFoundMany, invoices.count))
+                .font(.system(size: 12, weight: .medium))
+            Spacer()
+            if invoices.count == 1 {
+                Button(L10n.t(.saveInvoicePDF)) {
+                    state.exportInvoicePDF(invoices[0])
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.small)
+            } else {
+                Menu(L10n.t(.saveInvoicePDF)) {
+                    ForEach(Array(invoices.enumerated()), id: \.offset) { _, inv in
+                        Button(inv.filename) { state.exportInvoicePDF(inv) }
+                    }
+                    Divider()
+                    Button(L10n.t(.saveAllInvoices)) { state.exportAllInvoicePDFs() }
+                }
+                .menuStyle(.borderedButton)
+                .controlSize(.small)
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 8)
+        .background(Color.orange.opacity(0.12))
+    }
+}
+
 struct HeaderPanel: View {
     let message: Message
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(message.subject.isEmpty ? "(no subject)" : message.subject)
+            Text(message.subject.isEmpty ? L10n.t(.noSubject) : message.subject)
                 .font(.title2.weight(.semibold))
                 .textSelection(.enabled)
                 .lineLimit(3)
 
             VStack(alignment: .leading, spacing: 3) {
-                row("From", message.from)
-                row("To", message.to)
-                if !message.cc.isEmpty { row("Cc", message.cc) }
-                row("Date", message.date)
+                row(L10n.t(.from), message.from)
+                row(L10n.t(.to), message.to)
+                if !message.cc.isEmpty { row(L10n.t(.cc), message.cc) }
+                row(L10n.t(.date), message.date)
             }
             .font(.system(size: 12))
         }
@@ -237,7 +306,7 @@ struct BodyView: View {
                         .font(.system(.body, design: .monospaced))
                 }
             } else {
-                Text("(no body)")
+                Text(L10n.t(.noBody))
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -254,12 +323,12 @@ struct AttachmentsBar: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(alignment: .firstTextBaseline, spacing: 0) {
-                Text("\(attachments.count) attachment\(attachments.count == 1 ? "" : "s")")
+                Text(attachments.count == 1 ? L10n.t(.attachmentOne) : L10n.tf(.attachmentsMany, attachments.count))
                 Spacer()
                 Button {
                     state.downloadAll(attachments)
                 } label: {
-                    Label("Download All", systemImage: "arrow.down.circle")
+                    Label(L10n.t(.downloadAll), systemImage: "arrow.down.circle")
                 }
                 .buttonStyle(.borderless)
                 .help("Save all attachments to Downloads")
@@ -325,7 +394,7 @@ struct AttachmentChip: View {
         .onHover { hovered = $0 }
         .contextMenu {
             Button("Open") { state.openAttachment(part) }
-            Button("Save As…") { state.saveAsAttachment(part) }
+            Button(L10n.t(.saveAs)) { state.saveAsAttachment(part) }
         }
         .help("Open \(part.filename ?? "attachment")")
     }

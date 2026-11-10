@@ -1,0 +1,63 @@
+<p:FatturaElettronica xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12" xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd">
+	<FatturaElettronicaHeader>
+		<DatiTrasmissione>
+			<IdTrasmittente>
+				<IdPaese>IT</IdPaese>
+				<IdCodice>01203670334</IdCodice>
+			</IdTrasmittente>
+			<ProgressivoInvio>2026193</ProgressivoInvio>
+
+			<FormatoTrasmissione>FPR12</FormatoTrasmissione><CodiceDestinatario>0000000</CodiceDestinatario><PECDestinatario>unaa_pec@pec.it</PECDestinatario>
+ 	</DatiTrasmissione>
+		<CedentePrestatore>
+			<DatiAnagrafici>
+				<IdFiscaleIVA>
+					<IdPaese>IT</IdPaese>
+					<IdCodice>01203670334</IdCodice>
+				</IdFiscaleIVA>
+				<Anagrafica>
+					<Denominazione>AI Consulting S.r.l.</Denominazione>
+				</Anagrafica>
+				<RegimeFiscale>RF01</RegimeFiscale>
+			</DatiAnagrafici>
+			<Sede>
+				<Indirizzo>Via Guastafredda, 14</Indirizzo>
+				<CAP>29121</CAP>
+				<Comune>Piacenza</Comune>
+				<Provincia>PC</Provincia>
+				<Nazione>IT</Nazione>
+			</Sede>
+		</CedentePrestatore>
+		<CessionarioCommittente>
+			<DatiAnagrafici><CodiceFiscale>97787510581</CodiceFiscale><Anagrafica>
+					<Denominazione>Unione Nazionale Avvocati Amministrativisti</Denominazione>
+				</Anagrafica>
+			</DatiAnagrafici>
+			<Sede>
+				<Indirizzo>Via Giovanni Amendola, 46</Indirizzo><CAP>00185</CAP><Comune>Roma</Comune><Provincia>RM</Provincia><Nazione>IT</Nazione>
+			</Sede>
+		</CessionarioCommittente>
+	</FatturaElettronicaHeader>
+	<FatturaElettronicaBody>
+		<DatiGenerali>
+			<DatiGeneraliDocumento>
+				<TipoDocumento>TD01</TipoDocumento>
+				<Divisa>EUR</Divisa>
+				<Data>2026-10-31</Data>
+				<Numero>193/2026</Numero>
+				<Causale>Licenza Zoom Workplace PRO - 1 utente</Causale>
+			</DatiGeneraliDocumento>
+		</DatiGenerali>
+		<DatiBeniServizi>
+			<DettaglioLinee><NumeroLinea>1</NumeroLinea><Descrizione>Zoom canone annuo Licenza Workplace PRO - 1 utente</Descrizione><Quantita>1.00</Quantita><PrezzoUnitario>180.00</PrezzoUnitario><PrezzoTotale>180.00</PrezzoTotale><AliquotaIVA>22.00</AliquotaIVA></DettaglioLinee><DatiRiepilogo><AliquotaIVA>22.00</AliquotaIVA><ImponibileImporto>180.00</ImponibileImporto><Imposta>39.60</Imposta><EsigibilitaIVA>I</EsigibilitaIVA></DatiRiepilogo>
+		</DatiBeniServizi>
+		<DatiPagamento>
+			<CondizioniPagamento>TP02</CondizioniPagamento>
+			<DettaglioPagamento>
+				<ModalitaPagamento>MP05</ModalitaPagamento>
+				<DataScadenzaPagamento>2026-11-30</DataScadenzaPagamento>
+				<ImportoPagamento>219.60</ImportoPagamento>				<IBAN>IT63Y0515612600CC0000031291</IBAN>
+			</DettaglioPagamento>
+		</DatiPagamento>
+	</FatturaElettronicaBody>
+</p:FatturaElettronica>

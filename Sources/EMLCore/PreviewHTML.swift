@@ -33,8 +33,8 @@ public enum PreviewHTML {
     public static func build(from message: Message) -> PreviewDocument {
         let (attachments, cidMap) = collectInlineAttachments(from: message)
         let bodyHTML = renderBody(message: message, cidMap: cidMap)
-        let attachmentHTML = renderAttachmentList(message.attachments)
-        let html = renderDocument(message: message, bodyHTML: bodyHTML, attachmentHTML: attachmentHTML)
+        let attachmentHTML = renderAttachmentList(message.attachments, language: .systemPreferred)
+        let html = renderDocument(message: message, bodyHTML: bodyHTML, attachmentHTML: attachmentHTML, language: .systemPreferred)
         return PreviewDocument(html: html, attachments: attachments)
     }
 
@@ -64,11 +64,12 @@ public enum PreviewHTML {
                 + "font-size:13px;line-height:1.45;margin:0;"
             return "<pre style=\"\(style)\">\(escapeHTML(plain))</pre>"
         }
-        return #"<p style="color:#888;">(No message body)</p>"#
+        return #"<p style="color:#888;">(No message body)</p>"#  // localized at call site if needed
     }
 
-    private static func renderAttachmentList(_ attachmentList: [Part]) -> String {
+    private static func renderAttachmentList(_ attachmentList: [Part], language: ContentLanguage = .systemPreferred) -> String {
         guard !attachmentList.isEmpty else { return "" }
+        let label = language == .italian ? "Allegati" : "Attachments"
         let items = attachmentList.map { part -> String in
             let name = escapeHTML(part.filename ?? "attachment")
             let type = escapeHTML(part.contentType)
@@ -76,7 +77,7 @@ public enum PreviewHTML {
         }.joined()
         return """
         <div class="attachments">
-          <div class="label">Attachments</div>
+          <div class="label">\(label)</div>
           <ul>\(items)</ul>
         </div>
         """
@@ -85,9 +86,15 @@ public enum PreviewHTML {
     private static func renderDocument(
         message: Message,
         bodyHTML: String,
-        attachmentHTML: String
+        attachmentHTML: String,
+        language: ContentLanguage = .systemPreferred
     ) -> String {
-        let subject = escapeHTML(message.subject.isEmpty ? "(No subject)" : message.subject)
+        let noSubject = language == .italian ? "(nessun oggetto)" : "(No subject)"
+        let subject = escapeHTML(message.subject.isEmpty ? noSubject : message.subject)
+        let fromL = language == .italian ? "Da" : "From"
+        let toL = language == .italian ? "A" : "To"
+        let ccL = "Cc"
+        let dateL = language == .italian ? "Data" : "Date"
         return """
         <!doctype html>
         <html>
@@ -136,10 +143,10 @@ public enum PreviewHTML {
         <body>
           <div class="hdr">
             <div class="subject">\(subject)</div>
-            \(headerRow("From", message.from))
-            \(headerRow("To", message.to))
-            \(headerRow("Cc", message.cc))
-            \(headerRow("Date", message.date))
+            \(headerRow(fromL, message.from))
+            \(headerRow(toL, message.to))
+            \(headerRow(ccL, message.cc))
+            \(headerRow(dateL, message.date))
           </div>
           <div class="body">\(bodyHTML)</div>
           \(attachmentHTML)
@@ -219,6 +226,70 @@ public enum PreviewHTML {
             return html
         }
         return html
+    }
+
+
+    /// HTML for PDF export: innermost nested `.eml`, CID images as data URIs,
+    /// and any FatturaPA invoice(s) appended on new pages.
+    public static func buildSelfContained(from message: Message, language: ContentLanguage = .systemPreferred) -> String {
+        let core = message.innermostMessage
+        // Invoices from the full tree (outer PEC may only wrap them).
+        let invoices = FatturaPA.findInvoices(in: message)
+        var cidMap: [String: String] = [:]
+        for part in core.inlineParts {
+            guard let cid = part.contentID, !cid.isEmpty else { continue }
+            let data = part.decodedBody()
+            guard !data.isEmpty else { continue }
+            let mime = part.contentType.isEmpty ? "application/octet-stream" : part.contentType
+            let b64 = data.base64EncodedString()
+            cidMap[cid.lowercased()] = "data:\(mime);base64,\(b64)"
+        }
+        let bodyHTML = renderBody(message: core, cidMap: cidMap)
+        // Prefer attachments of the innermost mail; fall back to full-tree names for context.
+        let attachmentHTML = renderAttachmentList(core.attachments, language: language)
+        var html = renderDocument(message: core, bodyHTML: bodyHTML, attachmentHTML: attachmentHTML, language: language)
+        html = html.replacingOccurrences(
+            of: "color-scheme: light dark;",
+            with: "color-scheme: light;"
+        )
+        // Print-friendly page breaks between email and invoice(s).
+        if let styleRange = html.range(of: "</style>") {
+            let printCSS = """
+              .invoice-page { page-break-before: always; break-before: page; padding-top: 12px; }
+              @media print { .invoice-page { page-break-before: always; } }
+            """
+            html.replaceSubrange(styleRange, with: printCSS + "</style>")
+        }
+
+        var appendix = ""
+        for invoice in invoices {
+            if let invoiceHTML = try? FatturaPA.htmlDocument(xmlData: invoice.xmlData, language: language) {
+                let inner = extractBodyInnerHTML(invoiceHTML)
+                appendix += """
+                <div class="invoice-page">
+                  <div class="attachments" style="border-top:none;margin:0 0 12px;">
+                    <div class="label">FatturaPA · \(escapeHTML(invoice.filename))</div>
+                  </div>
+                  \(inner)
+                </div>
+                """
+            }
+        }
+        if !appendix.isEmpty, let range = html.range(of: "</body>") {
+            html.replaceSubrange(range, with: appendix + "</body>")
+        }
+        return html
+    }
+
+    private static func extractBodyInnerHTML(_ document: String) -> String {
+        let lower = document.lowercased()
+        guard let bodyOpen = lower.range(of: "<body"),
+              let gt = document[bodyOpen.upperBound...].firstIndex(of: ">"),
+              let bodyClose = lower.range(of: "</body>") else {
+            return document
+        }
+        let start = document.index(after: gt)
+        return String(document[start..<bodyClose.lowerBound])
     }
 
     private static func preferredExtension(for mimeType: String) -> String {

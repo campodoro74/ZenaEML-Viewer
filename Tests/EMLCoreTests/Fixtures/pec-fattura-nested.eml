@@ -1,0 +1,747 @@
+Received: from AMCPR02MB12474.eurprd02.prod.outlook.com (2603:10a6:20b:76f::6)
+ by VI0PR02MB11576.eurprd02.prod.outlook.com with HTTPS; Tue, 10 Nov 2026
+ 13:48:27 +0000
+Received: from AM9P193CA0014.EURP193.PROD.OUTLOOK.COM (2603:10a6:20b:21e::19)
+ by AMCPR02MB12474.eurprd02.prod.outlook.com (2603:10a6:20b:76f::6) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.592.13; Tue, 10 Nov
+ 2026 13:48:26 +0000
+Received: from AMS1EPF0000008E.eurprd05.prod.outlook.com
+ (2603:10a6:20b:21e:cafe::a0) by AM9P193CA0014.outlook.office365.com
+ (2603:10a6:20b:21e::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.21.592.13 via Frontend Transport; Tue,
+ 10 Nov 2026 13:48:25 +0000
+Authentication-Results: mx.microsoft.com 1; spf=fail (sender IP is
+ 5.196.35.211) smtp.mailfrom=pec.it; dkim=none (message not signed)
+ header.d=none;dmarc=fail action=none header.from=pec.aruba.it;compauth=none
+ reason=405
+Received-SPF: Fail (protection.outlook.com: domain of pec.it does not
+ designate 5.196.35.211 as permitted sender) receiver=protection.outlook.com;
+ client-ip=5.196.35.211; helo=mx02.zenahost.it;
+Received: from mx02.zenahost.it (5.196.35.211) by
+ AMS1EPF0000008E.mail.protection.outlook.com (10.167.242.85) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.21.615.4
+ via Frontend Transport; Tue, 10 Nov 2026 13:48:25 +0000
+Received: from mx02.zenahost.it (localhost [127.0.0.1])
+	by mx02.zenahost.it (Proxmox) with ESMTP id 85CB640CB4
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 14:48:25 +0100 (CET)
+Received-SPF: pass (pec.it: Sender is authorized to use 'unaa_pec@pec.it' in 'mfrom' identity (mechanism 'include:pec.aruba.it' matched)) receiver=mx02.zenahost.it; identity=mailfrom; envelope-from="unaa_pec@pec.it"; helo=smtps.pec.aruba.it; client-ip=80.88.94.23
+Received: from smtps.pec.aruba.it (smtpecgo03.pec.aruba.it [80.88.94.23])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx02.zenahost.it (Proxmox) with ESMTPS id 49910400FC
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 14:48:23 +0100 (CET)
+Received: from shared-jpec-sh-4.shared-jpec-sh.rem-aruba-is1.svc.cluster.local (shared-jpec-sh-4.shared-jpec-sh.rem-aruba-is1.svc.cluster.local [10.232.88.167])
+	by smtps.pec.aruba.it (Postfix) with ESMTP id 4jP7Jw6Tc2zN8
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 13:48:16 +0000 (UTC)
+Received: from shared-smtp-dovecot-submission-dz959 ([37.159.140.26])
+	by shared-smtp-sh-4.shared-smtp-sh.rem-aruba-is1.svc.cluster.local with ESMTPA
+	id 7SuLGKAg82rFmwAAvogiIw
+	(envelope-from <unaa_pec@pec.it>)
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 13:48:16 +0000
+Date: Tue, 10 Nov 2026 14:48:16 +0100
+From: "Per conto di: unaa_pec@pec.it" <posta-certificata@pec.aruba.it>
+Reply-To: unaa_pec@pec.it
+To: <info@zenaconsult.com>
+Message-ID: <jpec13219.20261110144816.86846.4004.1.1@pec.aruba.it>
+In-Reply-To: <63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it>
+Subject: POSTA CERTIFICATA: Fwd: POSTA CERTIFICATA: Invio File 18620992359
+Content-Type: multipart/signed; protocol="application/pkcs7-signature";
+	micalg=sha-256; boundary="----=_Part_9436030_203541809.1794318496864"
+X-Trasporto: posta-certificata
+X-TipoRicevuta: completa
+X-Riferimento-Message-ID: <a64fa091-6c7c-44ed-8d21-2c90efcc10b3@pec.it>
+X-SPAM-LEVEL: Spam detection results:  0
+	AWL                     0.078 Adjusted score from AWL reputation of From: address
+	BAYES_00                 -1.9 Bayes spam probability is 0 to 1%
+	DMARC_NONE                0.1 DMARC none policy
+	HEADER_FROM_DIFFERENT_DOMAINS  0.249 From and EnvelopeFrom 2nd level mail domains are different
+	HEXHASH_WORD                1 Multiple instances of word + hexadecimal hash
+	HTML_MESSAGE            0.001 HTML included in message
+	KAM_DMARC_NONE           0.25 DKIM has Failed or SPF has failed on the message and the domain has a DMARC none policy
+	KAM_DMARC_STATUS         0.01 Test Rule for DKIM or SPF Failure with Strict Alignment (newer systems)
+	KAM_NUMSUBJECT            0.5 Subject ends in numbers excluding current years
+	RCVD_IN_DNSWL_BLOCKED   0.001 ADMINISTRATOR NOTICE: The query to DNSWL was blocked.  See http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block for more information.
+	SPF_HELO_NONE           0.001 SPF: HELO does not publish an SPF Record
+	SPF_PASS               -0.001 SPF: sender matches SPF record
+	URI_HEX                   0.1 URI hostname has long hexadecimal sequence
+Return-Path: unaa_pec@pec.it
+X-MS-Exchange-Organization-ExpirationStartTime: 10 Nov 2026 13:48:25.7865
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: bc4adf6d-d531-4f6d-e031-08df3f314b38
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 761f4662-aa8a-48ec-9b26-136c0e40f8e9:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS1EPF0000008E:EE_|AMCPR02MB12474:EE_|VI0PR02MB11576:EE_
+X-MS-Exchange-Organization-AuthSource: AMS1EPF0000008E.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: bc4adf6d-d531-4f6d-e031-08df3f314b38
+X-MS-Exchange-Organization-SCL: -1
+X-MS-Exchange-Organization-BulkCategory: Promotions
+X-Microsoft-Antispam: BCL:2;ARA:13230040|5062899012|4092899012|3092899012|3072899012|2092899012|7093399015|41022699024|13102899012|13012899012|12012899012|260918215300599003|260918224100599003|6049299003|19002099009|22082099003|16102099003|6133799003|57112099003|8096899003|18003699003|10067099003|4013099003|4053099003|3613699012|261102123227099003|261028144727099003|261022105027099003|261009223027099003|261021121427099003|5063699009|261026140227099003|260925021911599003|260925021311599003|260925022911599003;
+X-Forefront-Antispam-Report: CIP:5.196.35.211;CTRY:FR;LANG:it;SCL:-1;SRV:;IPV:NLI;SFV:SFE;H:mx02.zenahost.it;PTR:mx02.zenahost.it;CAT:NONE;SFS:(13230040)(5062899012)(4092899012)(3092899012)(3072899012)(2092899012)(7093399015)(41022699024)(13102899012)(13012899012)(12012899012)(260918215300599003)(260918224100599003)(6049299003)(19002099009)(22082099003)(16102099003)(6133799003)(57112099003)(8096899003)(18003699003)(10067099003)(4013099003)(4053099003)(3613699012)(261102123227099003)(261028144727099003)(261022105027099003)(261009223027099003)(261021121427099003)(5063699009)(261026140227099003)(260925021911599003)(260925021311599003)(260925022911599003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Nov 2026 13:48:25.7009
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: bc4adf6d-d531-4f6d-e031-08df3f314b38
+X-MS-Exchange-CrossTenant-Id: 761f4662-aa8a-48ec-9b26-136c0e40f8e9
+X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000008E.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AMCPR02MB12474
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.6871958
+X-MS-Exchange-Processed-By-BccFoldering: 15.21.0592.010
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944490095)(944506478)(944626604)(920097)(811242)(255002)(410001)(930201)(20251009284)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?1kr4f/WJEZ+xdd6o0j9DgLIEJCQBiLz37ZUL+LEcqhLcT/oJ7tfWGvJgPh?=
+ =?iso-8859-1?Q?fjECJQTPSeSjZX2l9OId0ylVTLzEsA2y+0xLlDgXq8QC8hFV9sHdI2rBWx?=
+ =?iso-8859-1?Q?jNQkMyKlyp23Jkrm27Ps1Z73UIugD9GRL7MrLSjyWvbmOXjqrXCPj3gYon?=
+ =?iso-8859-1?Q?RjjxYFyBDvPWW4ho0K0aJAQH7j8N8ColL6MFBix9J+brc+kf2LYx5MBc6b?=
+ =?iso-8859-1?Q?CpMaWSs5jKLdh8PbodwVQDVJC004YRiCE9MSn/F55UgIFOhoG6z4OH+cUJ?=
+ =?iso-8859-1?Q?IGwyfyKv6glowV0IjTXzw+iCiJzv4grwR48361nBM/Dd08v1YUHrh2oDoh?=
+ =?iso-8859-1?Q?f3pHwVp8KnUUuXRPBOPpWN2ob1tlRwjc8Pa80G2HODjkN/ZdIhnDgaDrBe?=
+ =?iso-8859-1?Q?IoNkg/MLyjoP32FJHih7GOt2nzJ9DJkrgetzK4iAcZFJaA0AyRxO304nDy?=
+ =?iso-8859-1?Q?IhtVQrKwhWfGDtLe8GgLAof8lG/efprijxD/tJ1uirOFeIoEfOCBl8MPup?=
+ =?iso-8859-1?Q?Ns1YSlDESTg8xbDM7tRjJWeP3ALuMhk12Iu2LXmY8ZDLDN24QR1+7xFBhP?=
+ =?iso-8859-1?Q?uFAkQSPyo2zEJRK9CdlTC14iS3Pc0R8YHqN3syad1GFOqivpUbfHTsVN7V?=
+ =?iso-8859-1?Q?VXxP5yWG+AWYJAlGMd5a3dSSRO6IWvHcgyyFjFolUcvsWngG5oXWxy5Eql?=
+ =?iso-8859-1?Q?Xj4fFYyaIZ8Uus4VK6+CKxcukOxAETP6At3RhnSkq+Lsu0siDyxe7WOOIa?=
+ =?iso-8859-1?Q?jEICBD58YFZzDVCMznt/mod7HlkQXrNpz16pd7Ld3A7UHkt1gZWAFgFDds?=
+ =?iso-8859-1?Q?K7YTiWyqJIZATQmj2iFHjlWmSLp+7hOsBV8LJ2SDB5KELw/4EuXuQpKhR1?=
+ =?iso-8859-1?Q?bANOYSJN6vP0KUD+wQCb47QLDmwwYwBh1LrzAv8Zvh1RKNYVoCxyZ6P2mN?=
+ =?iso-8859-1?Q?O+PVTgWB3GD+m1QCDm+1ecoQJk9W3wRqg3Ef5qKo1DO/J0crMY26ZBfwvf?=
+ =?iso-8859-1?Q?cOHky7sntjIIHscf851jjjpISrAuiynUnPN4YEt2xR2Vd22LIQMHuWvZvp?=
+ =?iso-8859-1?Q?HOabo9sBzgVpbdIgUVa0OJuWakZZbJt9OAfQu2aziU/WUm+bnJ5SlOaizw?=
+ =?iso-8859-1?Q?daXJxOLoOdVpLgxIIfU/nhDmUW6GfxCrc5FmarLioMo+Kwq3N3cDt3k7Jn?=
+ =?iso-8859-1?Q?Mr0hZeV7aMhhjkhi5nRLKh3jLBJ8fDESJl3uBPpAboGM8IlmwUsWe+t6Ub?=
+ =?iso-8859-1?Q?8rpujO9ra+lPtZqClm5T9F7/lln3PTavHVN7isL+t7PL8aqMtuQLrTWR2z?=
+ =?iso-8859-1?Q?PI9Ah8Pzi8D1E3A4/8cPQjIbcjoF0S9Xd3NyBFZ1Q9jLMb0P//RKWYFx+o?=
+ =?iso-8859-1?Q?Xga5swl4xM1SWofHH0dBGvp+vcQpQCgnWn74MTru1nnK+Sz5JR3EcXb+J3?=
+ =?iso-8859-1?Q?g25qVfHz8BA3Ex7Ang4NqkLNfREU517dvvJY6s3pLaHq7d4pCjYzDCbcrT?=
+ =?iso-8859-1?Q?a9vs3M3W+67I4BOHM/aMP+dchdiFg6loOpbH4OOzAmbrV/6S0fZXcVNtoe?=
+ =?iso-8859-1?Q?YpaW8W+ciVfyAvgBWGFVuZI60q3H1oVnoNc942xt1cC1FpPOe+11HRL57Q?=
+ =?iso-8859-1?Q?NjyJM3JNwlcbCR5Bg4+97xR8kAKi+AOuUSg/AWPu7wHWBE/+Ag0VQ/xCFu?=
+ =?iso-8859-1?Q?UwndxK99xyubWtWcRCKMEyAdJOzVt8/PKC/ndxygXqd5IuyxR5j+yaPpzI?=
+ =?iso-8859-1?Q?atM3MLTsnTjZKUzS8vyGhU985kfnlzpxMj2w+zalRIVWMuKSdiqTJ0AXC5?=
+ =?iso-8859-1?Q?2EYzWam/r9ZCm8gqJMrZw0Alg+n2Clr0PmgEiwn4eNUX0mUdpdeGlAm1Oo?=
+ =?iso-8859-1?Q?S1hrxV3H7RumorUMKbIC2/82xo8SaMMjs86dhpzcjf9k1+9HtZ1FwAj0pz?=
+ =?iso-8859-1?Q?gWU70mHc9Z8zHiK+sRjm+C7vT+WLm6vhFuq1kiuXY40DQr1WOY1rsgc20Y?=
+ =?iso-8859-1?Q?6UlwD2s0dOEJPRAYqkiSVdPcVallqnyA73Qtd+Cdm0LNe7XXy6CR1wQJKS?=
+ =?iso-8859-1?Q?h9anEUrkVDZLZ+lg2Czha2oOMgkU7Tjnxcjz5PZfRt48MrUXm0A31mClvh?=
+ =?iso-8859-1?Q?1cXBejHS926Ijck42msOpqguXZALVaz1rIXKb2/bi71yxQHjwc4iF6CA6k?=
+ =?iso-8859-1?Q?69HTEa00+Cjuo7ygsXPKoZsz9r5CPBt8O+qU5pZh4vVM3mMjdkHDXiUo/Y?=
+ =?iso-8859-1?Q?YU65b6W30Uhp9vIuxEP+YX/RhozQdoWoilhr/z8FnD16nxVK53PgSW2UhF?=
+ =?iso-8859-1?Q?NLozLTmTmTIstAdRxp5JFHFgazq06amb2fpR2NjPYLID/vCN5AX8SaHnIi?=
+ =?iso-8859-1?Q?Ft3Z73aK7V2H1V2S8mppCw1yWcd0U/xQMHM/iNfhKU0PbWfGxAJP6OgDVl?=
+ =?iso-8859-1?Q?VMIAHlexnhZWevmS9DX32XZ+tOzH8UdHRa6kUZORfDhpwULF/r9Wfqrwdc?=
+ =?iso-8859-1?Q?yQIICkcpTptrZpJO41hepar779373RKCXiqK9AQtEt4vUDAvmLOPhhjxXu?=
+ =?iso-8859-1?Q?PMoUib9n2+aY1cLqBGG/Ea/6xZq3imcGXWr2zJULDYICsz/lyQsbdlLHla?=
+ =?iso-8859-1?Q?v3RkPC1g9URvfKQgQAUvQZO4rsTpJ1Z9x9gsvSSN1d6e0MIoDSOM/8kgPR?=
+ =?iso-8859-1?Q?EHpqOAjC2hczCtWFQhMIxH3zRrDZZs4ir0CaUr6Px4BzLxxB71k=3D?=
+MIME-Version: 1.0
+
+------=_Part_9436030_203541809.1794318496864
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_9436027_993798176.1794318496835"
+
+------=_Part_9436027_993798176.1794318496835
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9436026_654375978.1794318496834"
+
+------=_Part_9436026_654375978.1794318496834
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+-- Messaggio di posta certificata --
+
+Il giorno 10/11/2026 alle ore 14:48:16 (+0100) il messaggio con oggetto
+"Fwd: POSTA CERTIFICATA: Invio File 18620992359" =EF=BF=BD stato inviato da=
+ "unaa_pec@pec.it" ed indirizzato a:
+- info@zenaconsult.com
+Il messaggio originale =EF=BF=BD incluso in allegato.
+Identificativo messaggio: jpec13219.20261110144816.86846.4004.1.1@pec.aruba=
+.it
+
+
+
+
+
+---------------------------------------------------------------------------=
+--------------
+
+-- Certified mail message --
+
+On 10/11/2026 at 14:48:16 (+0100) the message with subject
+"Fwd: POSTA CERTIFICATA: Invio File 18620992359" was sent by "unaa_pec@pec.=
+it" and addressed to:
+- info@zenaconsult.com
+The original message is included as an attachment.
+Message identifier: jpec13219.20261110144816.86846.4004.1.1@pec.aruba.it
+
+
+
+
+
+------=_Part_9436026_654375978.1794318496834
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<html>
+<head><title>Messaggio di posta certificata</title></head>
+<body>
+<h3>Messaggio di posta certificata</h3>
+
+Il giorno 10/11/2026 alle ore 14:48:16 (+0100) il messaggio con oggetto &qu=
+ot;Fwd: POSTA CERTIFICATA: Invio File 18620992359&quot; &egrave; stato invi=
+ato da
+&quot;unaa_pec@pec.it&quot; ed indirizzato a:
+<ul>
+    <li>info@zenaconsult.com</li>
+</ul>
+Il messaggio originale &egrave; incluso in allegato.<br>
+Identificativo messaggio: jpec13219.20261110144816.86846.4004.1.1@pec.aruba=
+.it
+
+
+<br>
+<br>
+<hr>
+<h3>Certified mail message</h3>
+
+On 10/11/2026 at 14:48:16 (+0100) the message with subject &quot;Fwd: POSTA=
+ CERTIFICATA: Invio File 18620992359&quot; was sent by
+&quot;unaa_pec@pec.it&quot; and addressed to:
+<ul>
+    <li>info@zenaconsult.com</li>
+</ul>
+The original message is included as an attachment.<br>
+Message identifier: jpec13219.20261110144816.86846.4004.1.1@pec.aruba.it
+
+
+</body>
+</html>
+
+------=_Part_9436026_654375978.1794318496834--
+
+------=_Part_9436027_993798176.1794318496835
+Content-Type: application/xml; name="daticert.xml"
+Content-Transfer-Encoding: base64
+Content-Disposition: inline; filename="daticert.xml"
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHBvc3RhY2VydCB0aXBvPSJw
+b3N0YS1jZXJ0aWZpY2F0YSIgZXJyb3JlPSJuZXNzdW5vIj4KICAgIDxpbnRlc3RhemlvbmU+CiAg
+ICAgICAgPG1pdHRlbnRlPnVuYWFfcGVjQHBlYy5pdDwvbWl0dGVudGU+CiAgICAgICAgPGRlc3Rp
+bmF0YXJpIHRpcG89ImVzdGVybm8iPmluZm9AemVuYWNvbnN1bHQuY29tPC9kZXN0aW5hdGFyaT4K
+ICAgICAgICA8cmlzcG9zdGU+dW5hYV9wZWNAcGVjLml0PC9yaXNwb3N0ZT4KICAgICAgICA8b2dn
+ZXR0bz5Gd2Q6IFBPU1RBIENFUlRJRklDQVRBOiBJbnZpbyBGaWxlIDE4NjIwOTkyMzU5PC9vZ2dl
+dHRvPgogICAgPC9pbnRlc3RhemlvbmU+CiAgICA8ZGF0aT4KICAgICAgICA8Z2VzdG9yZS1lbWl0
+dGVudGU+QVJVQkEgUEVDIFMucC5BLjwvZ2VzdG9yZS1lbWl0dGVudGU+CiAgICAgICAgPGRhdGEg
+em9uYT0iKzAxMDAiPgogICAgICAgICAgICA8Z2lvcm5vPjEwLzExLzIwMjY8L2dpb3Jubz4KICAg
+ICAgICAgICAgPG9yYT4xNDo0ODoxNjwvb3JhPgogICAgICAgIDwvZGF0YT4KICAgICAgICA8aWRl
+bnRpZmljYXRpdm8+anBlYzEzMjE5LjIwMjYxMTEwMTQ0ODE2Ljg2ODQ2LjQwMDQuMS4xQHBlYy5h
+cnViYS5pdDwvaWRlbnRpZmljYXRpdm8+CiAgICAgICAgPG1zZ2lkPiZsdDthNjRmYTA5MS02Yzdj
+LTQ0ZWQtOGQyMS0yYzkwZWZjYzEwYjNAcGVjLml0Jmd0OzwvbXNnaWQ+CiAgICAgICAgPHJpY2V2
+dXRhIHRpcG89ImNvbXBsZXRhIi8+CiAgICA8L2RhdGk+CjwvcG9zdGFjZXJ0PgoNCg==
+------=_Part_9436027_993798176.1794318496835
+Content-Type: message/rfc822; name=postacert.eml
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline; filename=postacert.eml
+
+Received: from smtps.pec.aruba.it (localhost [127.0.0.1])
+	by smtps.pec.aruba.it (Postfix) with ESMTP id 4jP7Jw4lLGzN5
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 13:48:16 +0000 (UTC)
+Received: from shared-smtp-sh-4.shared-smtp-sh.rem-aruba-is1.svc.cluster.local (localhost [37.159.140.26])
+	by smtps.pec.aruba.it (Postfix) with ESMTPA id 4jP7Jw3J6KzMw
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 13:48:16 +0000 (UTC)
+Received: from shared-smtp-dovecot-submission-dz959 ([37.159.140.26])
+	by shared-smtp-sh-4.shared-smtp-sh.rem-aruba-is1.svc.cluster.local with ESMTPA
+	id 7SuLGKAg82rFmwAAvogiIw
+	(envelope-from <unaa_pec@pec.it>)
+	for <info@zenaconsult.com>; Tue, 10 Nov 2026 13:48:16 +0000
+Content-Type: multipart/mixed; boundary="------------jyP06utVEat2kIU3RtnvIdK5"
+Message-ID: <jpec13219.20261110144816.86846.4004.1.1@pec.aruba.it>
+Date: Tue, 10 Nov 2026 14:48:16 +0100
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Fwd: POSTA CERTIFICATA: Invio File 18620992359
+References: <63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it>
+Content-Language: it
+To: info@zenaconsult.com
+From: UNAA_PEC <unaa_pec@pec.it>
+In-Reply-To: <63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it>
+X-Forwarded-Message-Id: <63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it>
+X-Riferimento-Message-ID: <a64fa091-6c7c-44ed-8d21-2c90efcc10b3@pec.it>
+
+This is a multi-part message in MIME format.
+--------------jyP06utVEat2kIU3RtnvIdK5
+Content-Type: multipart/alternative;
+ boundary="------------Tjp0VxPfvfT0k2q00WjF8XSc"
+
+--------------Tjp0VxPfvfT0k2q00WjF8XSc
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Me la puoi aprire Martijn per favore ?
+
+
+
+-------- Messaggio Inoltrato --------
+Oggetto: 	POSTA CERTIFICATA: Invio File 18620992359
+Data: 	Tue, 10 Nov 2026 09:55:00 +0100
+Mittente: 	Per conto di: sdi54@pec.fatturapa.it 
+<posta-certificata@legalmail.it>
+Rispondi-a: 	sdi54@pec.fatturapa.it
+A: 	unaa_pec@pec.it
+
+
+
+  *Messaggio di posta certificata*
+
+Il giorno 10/11/2026 alle ore 09:55:00 (+0100) il messaggio "Invio File 
+18620992359" è stato inviato da "sdi54@pec.fatturapa.it" indirizzato a:
+
+unaa_pec@pec.it
+
+Il messaggio originale è incluso in allegato.
+
+*Identificativo messaggio*: 
+63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it
+
+L'allegato daticert.xml contiene informazioni di servizio sulla 
+trasmissione.
+
+------------------------------------------------------------------------
+
+*Certified email message*
+
+On 10/11/2026 at 09:55:00 (+0100) the message "Invio File 18620992359" 
+was sent by "sdi54@pec.fatturapa.it" and addressed to:
+
+unaa_pec@pec.it
+
+The original message is attached.
+
+*Message ID*: 
+63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it
+
+The daticert.xml attachment contains service information on the transmission
+
+--------------Tjp0VxPfvfT0k2q00WjF8XSc
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Me la puoi aprire Martijn per favore ?</p>
+    <div class="moz-forward-container"><br>
+      <br>
+      -------- Messaggio Inoltrato --------
+      <table cellpadding="0" cellspacing="0" border="0"
+        class="moz-email-headers-table">
+        <tbody>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Oggetto:
+            </th>
+            <td>POSTA CERTIFICATA: Invio File 18620992359</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Data: </th>
+            <td>Tue, 10 Nov 2026 09:55:00 +0100</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Mittente:
+            </th>
+            <td>Per conto di: <a class="moz-txt-link-abbreviated" href="mailto:sdi54@pec.fatturapa.it">sdi54@pec.fatturapa.it</a>
+              <a class="moz-txt-link-rfc2396E" href="mailto:posta-certificata@legalmail.it">&lt;posta-certificata@legalmail.it&gt;</a></td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Rispondi-a:
+            </th>
+            <td><a class="moz-txt-link-abbreviated" href="mailto:sdi54@pec.fatturapa.it">sdi54@pec.fatturapa.it</a></td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" align="RIGHT" nowrap="nowrap">A: </th>
+            <td><a class="moz-txt-link-abbreviated" href="mailto:unaa_pec@pec.it">unaa_pec@pec.it</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <h1>
+        <p><font
+style="font-family: Arial; font-size: 20px; font-weight: 400; line-height:17.3px; text-align: left;"><b>Messaggio
+              di posta certificata</b></font></p>
+      </h1>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">Il
+          giorno <span>10/11/2026</span> alle ore <span>09:55:00
+            (+0100)</span> il messaggio "<span>Invio File 18620992359</span>"
+          è stato inviato da "<span><a class="moz-txt-link-abbreviated" href="mailto:sdi54@pec.fatturapa.it">sdi54@pec.fatturapa.it</a></span>"
+          indirizzato a:</font><br>
+        <table border="0">
+          <tbody>
+            <tr>
+              <td><a class="moz-txt-link-abbreviated" href="mailto:unaa_pec@pec.it">unaa_pec@pec.it</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">Il
+          messaggio originale è incluso in allegato.</font></p>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;"><b>Identificativo
+            messaggio</b>: <span><a class="moz-txt-link-abbreviated" href="mailto:63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it">63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it</a></span></font></p>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">L'allegato
+          daticert.xml contiene informazioni di servizio sulla
+          trasmissione.</font></p>
+      <hr>
+      <p><font
+style="font-family: Arial; font-size: 20px; font-weight: 400; line-height:17.3px; text-align: left;"><b>Certified
+            email message</b></font></p>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">On
+          <span>10/11/2026</span> at <span>09:55:00 (+0100)</span> the
+          message "<span>Invio File 18620992359</span>" was sent by "<span><a class="moz-txt-link-abbreviated" href="mailto:sdi54@pec.fatturapa.it">sdi54@pec.fatturapa.it</a></span>"
+          and addressed to:</font><br>
+        <table border="0">
+          <tbody>
+            <tr>
+              <td><a class="moz-txt-link-abbreviated" href="mailto:unaa_pec@pec.it">unaa_pec@pec.it</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">The
+          original message is attached.</font></p>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;"><b>Message
+            ID</b>: <span><a class="moz-txt-link-abbreviated" href="mailto:63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it">63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it</a></span></font></p>
+      <p><font
+style="font-family: Arial; font-size: 15px; font-weight: 400; line-height:17.3px; text-align: left;">The
+          daticert.xml attachment contains service information on the
+          transmission</font></p>
+    </div>
+  </body>
+</html>
+
+--------------Tjp0VxPfvfT0k2q00WjF8XSc--
+
+--------------jyP06utVEat2kIU3RtnvIdK5
+Content-Type: message/rfc822; name="postacert.eml"
+Content-Disposition: attachment; filename="postacert.eml"
+Content-Transfer-Encoding: 7bit
+
+Received: from sdife85p6.srv.sogei.it (217.175.54.43) by sendm.cert.legalmail.it (authenticated as sdi54@pec.fatturapa.it)
+        id 6A21AFF8086922F7 for unaa_pec@pec.it; Tue, 10 Nov 2026 09:55:00 +0100
+Date: Tue, 10 Nov 2026 09:55:00 +0100 (added by postmaster@sendm.cert.legalmail.it)
+From: sdi54@pec.fatturapa.it
+To: unaa_pec@pec.it
+Message-ID: <63CF3F96.00C318A0.C4AAF647.57769B2A.posta-certificata@legalmail.it>
+Subject: Invio File 18620992359
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_248345_1503301314.1794300900494"
+X-TipoRicevuta: breve
+X-Riferimento-Message-ID: 5375242871522843.1794300900493@pec.fatturapa.it
+
+------=_Part_248345_1503301314.1794300900494
+Content-Type: application/octet-stream; name=IT01203670334_26193_MT_001.xml
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename=IT01203670334_26193_MT_001.xml
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:FileMetadati xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fattura/messaggi/v1.0" versione="1.0">
+    <IdentificativoSdI>18620992359</IdentificativoSdI>
+    <NomeFile>IT01203670334_26193.xml</NomeFile>
+    <Hash>7c873c8635de493745ee61f0e64a3de287c9b64adef36ab6439d5b487e901ba9</Hash>
+    <CodiceDestinatario>0000000</CodiceDestinatario>
+    <Formato>FPR12</Formato>
+    <TentativiInvio>1</TentativiInvio>
+    <MessageId>44609202169</MessageId>
+</ns3:FileMetadati>
+
+------=_Part_248345_1503301314.1794300900494
+Content-Type: application/octet-stream; name=IT01203670334_26193.xml
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename=IT01203670334_26193.xml
+
+<p:FatturaElettronica xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" versione="FPR12" xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd">
+	<FatturaElettronicaHeader>
+		<DatiTrasmissione>
+			<IdTrasmittente>
+				<IdPaese>IT</IdPaese>
+				<IdCodice>01203670334</IdCodice>
+			</IdTrasmittente>
+			<ProgressivoInvio>2026193</ProgressivoInvio>
+
+			<FormatoTrasmissione>FPR12</FormatoTrasmissione><CodiceDestinatario>0000000</CodiceDestinatario><PECDestinatario>unaa_pec@pec.it</PECDestinatario>
+ 	</DatiTrasmissione>
+		<CedentePrestatore>
+			<DatiAnagrafici>
+				<IdFiscaleIVA>
+					<IdPaese>IT</IdPaese>
+					<IdCodice>01203670334</IdCodice>
+				</IdFiscaleIVA>
+				<Anagrafica>
+					<Denominazione>AI Consulting S.r.l.</Denominazione>
+				</Anagrafica>
+				<RegimeFiscale>RF01</RegimeFiscale>
+			</DatiAnagrafici>
+			<Sede>
+				<Indirizzo>Via Guastafredda, 14</Indirizzo>
+				<CAP>29121</CAP>
+				<Comune>Piacenza</Comune>
+				<Provincia>PC</Provincia>
+				<Nazione>IT</Nazione>
+			</Sede>
+		</CedentePrestatore>
+		<CessionarioCommittente>
+			<DatiAnagrafici><CodiceFiscale>97787510581</CodiceFiscale><Anagrafica>
+					<Denominazione>Unione Nazionale Avvocati Amministrativisti</Denominazione>
+				</Anagrafica>
+			</DatiAnagrafici>
+			<Sede>
+				<Indirizzo>Via Giovanni Amendola, 46</Indirizzo><CAP>00185</CAP><Comune>Roma</Comune><Provincia>RM</Provincia><Nazione>IT</Nazione>
+			</Sede>
+		</CessionarioCommittente>
+	</FatturaElettronicaHeader>
+	<FatturaElettronicaBody>
+		<DatiGenerali>
+			<DatiGeneraliDocumento>
+				<TipoDocumento>TD01</TipoDocumento>
+				<Divisa>EUR</Divisa>
+				<Data>2026-10-31</Data>
+				<Numero>193/2026</Numero>
+				<Causale>Licenza Zoom Workplace PRO - 1 utente</Causale>
+			</DatiGeneraliDocumento>
+		</DatiGenerali>
+		<DatiBeniServizi>
+			<DettaglioLinee><NumeroLinea>1</NumeroLinea><Descrizione>Zoom canone annuo Licenza Workplace PRO - 1 utente</Descrizione><Quantita>1.00</Quantita><PrezzoUnitario>180.00</PrezzoUnitario><PrezzoTotale>180.00</PrezzoTotale><AliquotaIVA>22.00</AliquotaIVA></DettaglioLinee><DatiRiepilogo><AliquotaIVA>22.00</AliquotaIVA><ImponibileImporto>180.00</ImponibileImporto><Imposta>39.60</Imposta><EsigibilitaIVA>I</EsigibilitaIVA></DatiRiepilogo>
+		</DatiBeniServizi>
+		<DatiPagamento>
+			<CondizioniPagamento>TP02</CondizioniPagamento>
+			<DettaglioPagamento>
+				<ModalitaPagamento>MP05</ModalitaPagamento>
+				<DataScadenzaPagamento>2026-11-30</DataScadenzaPagamento>
+				<ImportoPagamento>219.60</ImportoPagamento>				<IBAN>IT63Y0515612600CC0000031291</IBAN>
+			</DettaglioPagamento>
+		</DatiPagamento>
+	</FatturaElettronicaBody>
+</p:FatturaElettronica>
+------=_Part_248345_1503301314.1794300900494
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Invio file IT01203670334_26193.xml, con identificativo 18620992359.In alleg=
+ato il file contenente la fattura ed il file contenente i metadati.
+La mail e' inviata dal Sistema di Interscambio per la fatturazione elettron=
+ica (L. 244/2007).
+Se il file allegato presenta estensione .xml.p7m vuol dire che e' stato fir=
+mato digitalmente con firma Cades;  per aprirlo e' necessario installare su=
+l proprio computer un apposito software.
+Tali software sono facilmente reperibili sul web sia a pagamento che gratui=
+tamente (licenza open source). Il file xml ottenuto dopo aver 'decifrato' l=
+a firma puo' essere agevolmente visualizzato
+in formato PDF utilizzando la funzionalit=C3=83=C2=A0 'Visualizza PDF Fattu=
+ra' dell'area 'Fatturazione elettronica' del sito Fatture e Corrispettivi.
+
+
+Per qualsiasi necessita' di chiarimenti non rispondere a questa mail, ma ut=
+ilizzare i tradizionali canali di assistenza presenti sul sito www.fatturap=
+a.gov.it.
+
+Il nuovo indirizzo da utilizzare per inviare le prossime fatture al Sistema=
+ di Interscambio, fino ad un eventuale nuovo avviso, e' sdi36@pec.fatturapa=
+.it. L'utilizzo di un indirizzo diverso non garantisce il buon esito del re=
+capito al destinatario.
+
+
+
+If you need any clarification do not reply to this email, but use tradition=
+al support channels on the site www.fatturapa.gov.it.
+
+The file IT01203670334_26193.xml has been sent with ID 18620992359.The file=
+ containing the invoice and the file containing the metadata are attached.
+This mail is sent by the Exchange System for electronic invoicing (Law 244/=
+2007).
+If the attached file has the extension .xml.p7m, it means that the file has=
+ been signed with Cades signature; to be able to read it, you need to insta=
+ll a specific software on your computer.
+These software can be easily found on the web, both paid and free (open sou=
+rce license). The xml file obtained after signature decoding can be easily =
+displayed in PDF format,
+using the 'Visualizza PDF Fattura' in the 'Fatturazione elettronica' area o=
+f the Fatture e Corrispettivi website.
+
+If you want to send other files to the Exchange System, please use the addr=
+ess: sdi36@pec.fatturapa.it.Using a different address does not guarantee de=
+livery.
+
+
+------=_Part_248345_1503301314.1794300900494--
+
+--------------jyP06utVEat2kIU3RtnvIdK5
+Content-Type: application/xml; name="daticert.xml"
+Content-Disposition: attachment; filename="daticert.xml"
+Content-Transfer-Encoding: base64
+
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHBvc3RhY2VydCB0aXBv
+PSJwb3N0YS1jZXJ0aWZpY2F0YSIgZXJyb3JlPSJuZXNzdW5vIj4KICAgIDxpbnRlc3Rhemlv
+bmU+CiAgICAgICAgPG1pdHRlbnRlPnNkaTU0QHBlYy5mYXR0dXJhcGEuaXQ8L21pdHRlbnRl
+PgogICAgICAgIDxkZXN0aW5hdGFyaSB0aXBvPSJjZXJ0aWZpY2F0byI+dW5hYV9wZWNAcGVj
+Lml0PC9kZXN0aW5hdGFyaT4KICAgICAgICA8cmlzcG9zdGU+c2RpNTRAcGVjLmZhdHR1cmFw
+YS5pdDwvcmlzcG9zdGU+CiAgICAgICAgPG9nZ2V0dG8+SW52aW8gRmlsZSAxODYyMDk5MjM1
+OTwvb2dnZXR0bz4KICAgIDwvaW50ZXN0YXppb25lPgogICAgPGRhdGk+CiAgICAgICAgPGdl
+c3RvcmUtZW1pdHRlbnRlPkluZm9DZXJ0IFMucC5BLjwvZ2VzdG9yZS1lbWl0dGVudGU+CiAg
+ICAgICAgPGRhdGEgem9uYT0iKzAxMDAiPgogICAgICAgICAgICA8Z2lvcm5vPjEwLzExLzIw
+MjY8L2dpb3Jubz4KICAgICAgICAgICAgPG9yYT4wOTo1NTowMDwvb3JhPgogICAgICAgIDwv
+ZGF0YT4KICAgICAgICA8aWRlbnRpZmljYXRpdm8+NjNDRjNGOTYuMDBDMzE4QTAuQzRBQUY2
+NDcuNTc3NjlCMkEucG9zdGEtY2VydGlmaWNhdGFAbGVnYWxtYWlsLml0PC9pZGVudGlmaWNh
+dGl2bz4KICAgICAgICA8bXNnaWQ+NTM3NTI0Mjg3MTUyMjg0My4xNzk0MzAwOTAwNDkzQHBl
+Yy5mYXR0dXJhcGEuaXQ8L21zZ2lkPgogICAgICAgIDxyaWNldnV0YSB0aXBvPSJicmV2ZSIg
+Lz4KICAgIDwvZGF0aT4KPC9wb3N0YWNlcnQ+CgoK
+
+--------------jyP06utVEat2kIU3RtnvIdK5--
+
+------=_Part_9436027_993798176.1794318496835--
+
+------=_Part_9436030_203541809.1794318496864
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDTALBglghkgBZQMEAgEwCwYJKoZIhvcNAQcBoIAwggUAMIID
+6KADAgECAhB0MeYqAord1BbTzu5d3qxuMA0GCSqGSIb3DQEBCwUAMIGQMQswCQYDVQQGEwJJVDEN
+MAsGA1UEBwwEUm9tYTEmMCQGA1UECgwdQWdlbnppYSBwZXIgbCdJdGFsaWEgRGlnaXRhbGUxNzA1
+BgNVBAsMLkFyZWEgU29sdXppb25pIHBlciBsYSBQdWJibGljYSBBbW1pbmlzdHJhemlvbmUxETAP
+BgNVBAMMCEFnSUQgQ0ExMB4XDTI2MDcyODA5MDIwMloXDTI4MTAzMDA5MDIwMlowgYwxCzAJBgNV
+BAYTAklUMRAwDgYDVQQIDAdCZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBTYW4gUGlldHJvMRkwFwYD
+VQQKDBBBcnViYSBQRUMgUy5wLkEuMRowGAYDVQRhDBFWQVRJVC0wMTg3OTAyMDUxNzEZMBcGA1UE
+AwwQQXJ1YmEgUEVDIFMucC5BLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALnwQRl/
+ol6IcEwhJ/bHeJH7wTr3mC08ZuS2USvcPOWHIVvQh0GEDejhYUyTt9F0/YL1/o9jZTGKBu565o0V
+OeKYnXDmaHHZbqTQg7E2cCnsSeU4f7SyJ9b83voQPTl+Z3a23yTuEkvQ10yTSDdF7V0ub4RwApjV
+N9gc7Yek9w7h4jtKsjWySVv/2e8P1d+WQuXhbluTu9VXCGvj6DiSn/+S/xx7IcjH4Hdi7wJNWQRD
+x2FHzKL/4eKjxvyS4xgVBDw54TyS38UuRetNMhJfk1dAqd538SGBW7SDMIP8NzTP8pKqCW68Kauj
+0GewF3uBKnj8uLPu+kqaTkYRgnHvSPsCAwEAAaOCAVYwggFSMDcGCCsGAQUFBwEBBCswKTAnBggr
+BgEFBQcwAYYbaHR0cDovL2NhMS5hZ2lkLmdvdi5pdC9PQ1NQMB0GA1UdDgQWBBQpd17uKdK80gCk
+/NziuDMdVBkC6zAfBgNVHSMEGDAWgBSl/YUFDsPx1mVKIGzi201gkyuKoDBaBgNVHSAEUzBRMEQG
+BitMEAMBATA6MDgGCCsGAQUFBwIBFixodHRwOi8vd3d3LmFnaWQuZ292Lml0L2NlcnRpZmljYXRp
+LWZpcm1hLXBlYzAJBgdngQwBBQICMCsGA1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9jYTEuYWdpZC5n
+b3YuaXQvQ1JMMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDBDApBgNVHREEIjAg
+gR5wb3N0YS1jZXJ0aWZpY2F0YUBwZWMuYXJ1YmEuaXQwDQYJKoZIhvcNAQELBQADggEBAJoJqWN2
+RSVxpU/hI13BZ3HVNBQZ8dS6jtdYeZNuO7X7zsfb+935iRxjwlVT6dNXsEgrGfBWpmr6Z0XtNmbK
+wwa+K+pd+EvlKwwxhPaZ6Q7AatG/E2VBDlhIoJDAvBLok200BqKEmjdEsjKOi1K3/5eHxYpq5n1K
+cqfcw3rRAFc/RWB8FEFfgX/RQNmwAKiee2/GitgbqrkQCnY2g7SrhzjjDnfnVVihqw0jVfJgRLfy
+UOAr/lYE1frcBcRukvI4heXV9SQLn0iHFPBUqQx7WcUYXuobjKiiej1m6qq8Fwbfu2r+Iw1T4KVt
+Tn8kpJFKJZ2mN4O1pAFsPQqa0KXiVLkwghKmMIIQjqADAgECAhBeOCToLam6fGNPvUhaqjAtMA0G
+CSqGSIb3DQEBCwUAMGsxCzAJBgNVBAYTAklUMQ4wDAYDVQQHDAVNaWxhbjEjMCEGA1UECgwaQWN0
+YWxpcyBTLnAuQS4vMDMzNTg1MjA5NjcxJzAlBgNVBAMMHkFjdGFsaXMgQXV0aGVudGljYXRpb24g
+Um9vdCBDQTAeFw0yNTAyMjAxNDU3NDBaFw0zMDA5MjIxMTIyMDJaMIGQMQswCQYDVQQGEwJJVDEN
+MAsGA1UEBwwEUm9tYTEmMCQGA1UECgwdQWdlbnppYSBwZXIgbCdJdGFsaWEgRGlnaXRhbGUxNzA1
+BgNVBAsMLkFyZWEgU29sdXppb25pIHBlciBsYSBQdWJibGljYSBBbW1pbmlzdHJhemlvbmUxETAP
+BgNVBAMMCEFnSUQgQ0ExMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1TafReuLzB6k
+jYBqvMlUbkT3+RCleG4ttfexCA3RGNN+G88H1/BdGt+9qvm6mxYa/A+5QHZncDaOx4NrWFu8d55+
+SR+MpP9SRSJ2pkQqmtvXvq3/Mmg1UjuWBEKOPP3QHJWNQcgW7BBQc5Uxt8fJ4FalNCvNizGeh9Ep
+F6ndkRIuWEpqWfj/z+tIgLGcPwql5NDjVCfxVimPRFXQ1TT6T1WBH0L8rjNfXPgCicx6ZxE//wHV
+cXKOTYtqpRce3wsHDpZv45g76f2tcpPykPKv3/N36RInHEjaC+ijJ7te3fEkao4OSlmu7dDcZvlz
+xPZRnaacpnA5yI3in/m1w5oLVwIDAQABo4IOHjCCDhowEgYDVR0TAQH/BAgwBgEB/wIBADAfBgNV
+HSMEGDAWgBRS2Ig6yJ94Zu2J83s4cJTJAgI20DB9BggrBgEFBQcBAQRxMG8wOgYIKwYBBQUHMAKG
+Lmh0dHA6Ly9jYWNlcnQuYWN0YWxpcy5pdC9jZXJ0cy9hY3RhbGlzLWF1dHJvb3QwMQYIKwYBBQUH
+MAGGJWh0dHA6Ly9vY3NwMDcuYWN0YWxpcy5pdC9WQS9BVVRILVJPT1Qwggx6BgNVHR4EggxxMIIM
+baCCDDMwDYELYWdpZC5nb3YuaXQwGYEXY2VydC5pbmZvcm1hdGljYS5hY2kuaXQwEYEPY2VydC5p
+bnRlcm5vLml0MAyBCmVtYXJjaGUuaXQwEIEOZmFzdHdlYi1wZWMuaXQwFYETZ2VzdG9yZXBlYy51
+bmluYS5pdDAMgQprbWFpbGVyLml0MA6BDGxlZ2FsbWFpbC5pdDAQgQ5wY2VydC5zb2dlaS5pdDAQ
+gQ5wZWMuYWN0YWxpcy5pdDAQgQ5wZWMuYW5jaXRlbC5pdDAOgQxwZWMuYXJ1YmEuaXQwFoEUcGVj
+LmJhc2lsaWNhdGFuZXQuaXQwD4ENcGVjLWVtYWlsLmNvbTASgRBwZWMucG9zdGVjZXJ0Lml0MBaB
+FHBlYy5wb3N0ZWl0YWxpYW5lLml0MBWBE3BlYy5ydXBhci5wdWdsaWEuaXQwFoEUcG9zdGFjZXJ0
+LmNlZGFjcmkuaXQwH4EdcG9zdGFjZXJ0aWZpY2F0YS5ub3RhcmlhdG8uaXQwEoEQcG9zdGFjZXJ0
+Lml0Lm5ldDAOgQxwb3N0ZWNlcnQuaXQwFYETc2ljdXJlenphcG9zdGFsZS5pdDAQgQ50ZWxlY29t
+cG9zdC5pdDAXgRV0cnVzdGVkbWFpbC5pbnRlc2EuaXQwDIEKdHd0Y2VydC5pdDARgQ96dWNjaGV0
+dGlwZWMuaXQwEIEOY2VydC5pbnRlc2EuaXQwFoEUY2VydG1haWwua3BucXdlc3QuaXQwFYETY2Vy
+dG1haWwuaXJpZGVvcy5pdDAagRhwdXBlYy5pbmZvcm1hdGljYS5hY2kuaXQwGYEXcHJvLnNpY3Vy
+ZXp6YXBvc3RhbGUuaXQwEIEOcGVjLmJpbGw0bWUuaXQwEYEPcGVjLm5vdGFydGVsLml0MAuBCW1p
+YXBlYy5pdDASgRBpZy10cnVzdG1haWwuY29tMBOBEXBvc3RlY2VydGlmaWNhLml0MA6BDHBlYy5y
+ZWV2by5ldTBQpE4wTDELMAkGA1UEBhMCSVQxDTALBgNVBAgMBFJvbWExDTALBgNVBAcMBFJvbWEx
+HzAdBgNVBAoMFkFDSSBJbmZvcm1hdGljYSBTLnAuQS4wWaRXMFUxCzAJBgNVBAYTAklUMRAwDgYD
+VQQIDAdCZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBTYW4gUGlldHJvMRkwFwYDVQQKDBBBcnViYSBQ
+RUMgUy5wLkEuMFekVTBTMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQ
+UG9udGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4wV6RVMFMxCzAJBgNVBAYT
+AklUMQ0wCwYDVQQIDARSb21hMQ0wCwYDVQQHDARSb21hMSYwJAYDVQQKDB1BZ2VuemlhIHBlciBs
+J0l0YWxpYSBEaWdpdGFsZTBIpEYwRDELMAkGA1UEBhMCSVQxDTALBgNVBAgMBFJvbWExDTALBgNV
+BAcMBFJvbWExFzAVBgNVBAoMDkFuY2l0ZWwgUy5wLkEuME+kTTBLMQswCQYDVQQGEwJJVDEOMAwG
+A1UECAwFUGFybWExEzARBgNVBAcMCkNvbGxlY2NoaW8xFzAVBgNVBAoMDkNlZGFjcmkgUy5wLkEu
+MFukWTBXMQswCQYDVQQGEwJJVDENMAsGA1UECAwEUm9tYTENMAsGA1UEBwwEUm9tYTEqMCgGA1UE
+CgwhQ29uc2lnbGlvIE5hemlvbmFsZSBkZWwgTm90YXJpYXRvMEykSjBIMQswCQYDVQQGEwJJVDEP
+MA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xFzAVBgNVBAoMDkZhc3R3ZWIgUy5wLkEu
+MEqkSDBGMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZBc3NhZ28xFTAT
+BgNVBAoMDElUbmV0IFMuci5sLjBPpE0wSzELMAkGA1UEBhMCSVQxDzANBgNVBAgMBlRvcmlubzEP
+MA0GA1UEBwwGVG9yaW5vMRowGAYDVQQKDBFJbi5UZS5TLkEuIFMucC5BLjBJpEcwRTELMAkGA1UE
+BhMCSVQxDTALBgNVBAgMBFJvbWExDTALBgNVBAcMBFJvbWExGDAWBgNVBAoMD0luZm9DZXJ0IFMu
+cC5BLjBSpFAwTjELMAkGA1UEBhMCSVQxDTALBgNVBAgMBEJhcmkxEjAQBgNVBAcMCVZhbGVuemFu
+bzEcMBoGA1UECgwTSW5ub3ZhUHVnbGlhIFMucC5BLjBRpE8wTTELMAkGA1UEBhMCSVQxDzANBgNV
+BAgMBkFuY29uYTETMBEGA1UEBwwKU2VuaWdhbGxpYTEYMBYGA1UECgwPTmFtaXJpYWwgUy5wLkEu
+ME+kTTBLMQswCQYDVQQGEwJJVDENMAsGA1UECAwEUm9tYTENMAsGA1UEBwwEUm9tYTEeMBwGA1UE
+CgwVUG9zdGUgSXRhbGlhbmUgUy5wLkEuMFKkUDBOMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHUG90
+ZW56YTEQMA4GA1UEBwwHUG90ZW56YTEbMBkGA1UECgwSUmVnaW9uZSBCYXNpbGljYXRhMEykSjBI
+MQswCQYDVQQGEwJJVDEPMA0GA1UECAwGQW5jb25hMQ8wDQYDVQQHDAZBbmNvbmExFzAVBgNVBAoM
+DlJlZ2lvbmUgTWFyY2hlME+kTTBLMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHRmlyZW56ZTEQMA4G
+A1UEBwwHRmlyZW56ZTEYMBYGA1UECgwPUmVnaXN0ZXIgUy5wLkEuMEakRDBCMQswCQYDVQQGEwJJ
+VDENMAsGA1UECAwEUm9tYTENMAsGA1UEBwwEUm9tYTEVMBMGA1UECgwMU29nZWkgUy5wLkEuMEik
+RjBEMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xEzARBgNV
+BAoMClRXVCBTLnAuQS4wZaRjMGExCzAJBgNVBAYTAklUMQ0wCwYDVQQIDARSb21hMRAwDgYDVQQH
+DAdQb21lemlhMTEwLwYDVQQKDChUZWxlY29tIEl0YWxpYSBUcnVzdCBUZWNobm9sb2dpZXMgUy5y
+LmwuMGqkaDBmMQswCQYDVQQGEwJJVDEPMA0GA1UECAwGTmFwb2xpMQ8wDQYDVQQHDAZOYXBvbGkx
+NTAzBgNVBAoMLFVOSVZFUlNJVEEgREVHTEkgU1RVREkgREkgTkFQT0xJIEZFREVSSUNPIElJMEqk
+SDBGMQswCQYDVQQGEwJJVDENMAsGA1UECAwETG9kaTENMAsGA1UEBwwETG9kaTEZMBcGA1UECgwQ
+WnVjY2hldHRpIFMucC5BLjBUpFIwUDELMAkGA1UEBhMCSVQxDzANBgNVBAgMBk1pbGFubzEPMA0G
+A1UEBwwGTWlsYW5vMR8wHQYDVQQKDBZLUE5RV0VTVCBJVEFMSUEgUy5yLmwuMEykSjBIMQswCQYD
+VQQGEwJJVDEPMA0GA1UECAwGTWlsYW5vMQ8wDQYDVQQHDAZNaWxhbm8xFzAVBgNVBAoMDklSSURF
+T1MgUy5wLkEuMEmkRzBFMQswCQYDVQQGEwJJVDENMAsGA1UECAwEUm9tYTENMAsGA1UEBwwEUm9t
+YTEYMBYGA1UECgwPTm90YXJ0ZWwgUy5wLkEuMEqkSDBGMQswCQYDVQQGEwJJVDEPMA0GA1UECAwG
+VG9yaW5vMQ8wDQYDVQQHDAZUb3Jpbm8xFTATBgNVBAoMDFRlbHN5IFMucC5BLjBRpE8wTTELMAkG
+A1UEBhMCSVQxDzANBgNVBAgMBk1pbGFubzEPMA0GA1UEBwwGTWlsYW5vMRwwGgYDVQQKDBNJbnRl
+c2kgR3JvdXAgUy5wLkEuMEekRTBDMQswCQYDVQQGEwJJVDENMAsGA1UECAwEUm9tYTENMAsGA1UE
+BwwEUm9tYTEWMBQGA1UECgwNUG9zdGVsIFMucC5BLjBKpEgwRjELMAkGA1UEBhMCSVQxDzANBgNV
+BAgMBk1pbGFubzEPMA0GA1UEBwwGTWlsYW5vMRUwEwYDVQQKDAxSZWVWbyBTLnAuQS6hNDAKhwgA
+AAAAAAAAADAihyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADACggAwTgYDVR0gBEcw
+RTBDBgUrTBADATA6MDgGCCsGAQUFBwIBFixodHRwOi8vd3d3LmFnaWQuZ292Lml0L2NlcnRpZmlj
+YXRpLWZpcm1hLXBlYzAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwSAYDVR0fBEEwPzA9
+oDugOYY3aHR0cDovL2NybDA3LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0TGFz
+dENSTDAdBgNVHQ4EFgQUpf2FBQ7D8dZlSiBs4ttNYJMriqAwDgYDVR0PAQH/BAQDAgEGMA0GCSqG
+SIb3DQEBCwUAA4ICAQBcP2ZijzFJfran3wC7di2E+ZYkJFZpSJDQn2oJm2ai4E9QG1FUCtJGg8kn
+mK9PGvY32Fz0AQdKshAiJZrp5nmMtdoPLTlPg7AKS4+SUXBTx6gH2/4lMQrk09kasiit3GxzVcjK
+zOwmjLcC5oiDtTQUz8GdlWUAsAaxuNsMbKWBBRUusTmt7SUbrO7DChtEiUQZlnwb8A+KY6zcmJp+
+mMKsKDNVVjvmI3Y8NBpxbg0/mdpHvOtiL4wQKC2p3/YE339fHsVJWOzlGVvsfTXi4brCkC4xG4jf
+ISVN4D8n4FVsz9DTVsij/IVBPjJwKkUxSpLu+HJx14kp0EYiKPbhKGSMppu+18U1g4skGL3GwxKa
+dB4S8i2ll/b+Vv31Cg7J3SuGO4hpTnDqQEncj7EI7NQcCwQxHwk9cN4NStu7Nwo+44CN9x6COPc7
+jqKi0UZ++KyYNGGmqqKMgiM37Laxfc3gAzM3ua4dC0s9tOifmm/ZgiFl6Ekp/9epSXUwREsmueQG
+Lo83kALc9hJilSLCIbFSDk8t7oIAtHB8tHyD3hMMHGl3haEzqb+MNbqC9vGO2JYz8XV+8Si26Wks
+Mv7jrLg6Gj+6Jw6mpJEVDTBwlbWCNqmWb2R5zqg9YwzxF8679lLmiPuzgO6WYd1ad+kVFSNANBAl
+YTCqm346hfECXjiRlQAAMYICaDCCAmQCAQEwgaUwgZAxCzAJBgNVBAYTAklUMQ0wCwYDVQQHDARS
+b21hMSYwJAYDVQQKDB1BZ2VuemlhIHBlciBsJ0l0YWxpYSBEaWdpdGFsZTE3MDUGA1UECwwuQXJl
+YSBTb2x1emlvbmkgcGVyIGxhIFB1YmJsaWNhIEFtbWluaXN0cmF6aW9uZTERMA8GA1UEAwwIQWdJ
+RCBDQTECEHQx5ioCit3UFtPO7l3erG4wCwYJYIZIAWUDBAIBoIGWMBgGCSqGSIb3DQEJAzELBgkq
+hkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI2MTExMDEzNDgxNlowKwYJKoZIhvcNAQk0MR4wHDAL
+BglghkgBZQMEAgGhDQYJKoZIhvcNAQELBQAwLwYJKoZIhvcNAQkEMSIEIEO+rTFgCapcXctiVw1w
+W7sSMDd5z5C/XRvmVUSay8meMA0GCSqGSIb3DQEBCwUABIIBAD1iTo7Kqw1kNjdaH75fsSiUheAt
+iGxda7wcmvZTNECg/N9/dj82cHmBZd3LwDmXqG6s/AX8c6BftJNRp7x9hSLFLLvhQJzt5f+vfYS+
+wKeyKAqd0xE7j3aTxISKL/lSPTMREMphMfTEYVjXZ4+qqAKxE4GwSw8S96Q5QkkYqFGJMV7J/TH+
+E/tv9yBuyt9rHejahRJApCNJjg7LHNf7wrwNalyI8u5IiAJi/RJi3iJKaHbmIZsUxjMv4Ow4fUR3
+qEiBzg/SowAKLGYmX8BhnpVPJmPkbN2OTWvBpUjNRgzd53Q6RB1u1QlwRlvJOaAz99uLSn9L3uax
+hOQtveS9IPQAAAAAAAA=
+
+------=_Part_9436030_203541809.1794318496864--

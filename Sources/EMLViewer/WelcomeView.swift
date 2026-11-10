@@ -23,18 +23,32 @@ struct WelcomeView: View {
                 .frame(width: 72, height: 72)
 
             VStack(spacing: 4) {
-                Text("ZenaEML Viewer")
+                Text("ZenaEML Viewer to PDF")
                     .font(.system(size: 20, weight: .semibold))
-                Text("by ZenaConsult")
+                Text(L10n.t(.byZenaConsult))
                     .font(.system(size: 12, weight: .medium))
                     .foregroundStyle(.secondary)
                 Text("Version \(appVersion)")
                     .font(.system(size: 12))
                     .foregroundStyle(.secondary)
-                Text("Viewer for .eml and .msg files · Finder Quick Look")
+                Text(L10n.t(.tagline))
                     .font(.system(size: 12))
                     .foregroundStyle(.secondary)
             }
+
+            VStack(alignment: .leading, spacing: 6) {
+                Text(L10n.t(.aboutBlurb))
+                    .font(.system(size: 12))
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(L10n.t(.howItWorks))
+                    .font(.system(size: 11))
+                    .foregroundStyle(.tertiary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: 360)
+            .multilineTextAlignment(.leading)
+            .padding(.horizontal, 12)
 
             Divider().padding(.horizontal, 60).padding(.vertical, 4)
 
@@ -42,7 +56,7 @@ struct WelcomeView: View {
                 Button {
                     state.openPanel()
                 } label: {
-                    Label("Open .eml file…", systemImage: "folder")
+                    Label(L10n.t(.openEml), systemImage: "folder")
                         .frame(width: 240)
                 }
                 .controlSize(.large)
@@ -58,6 +72,7 @@ struct WelcomeView: View {
                 }
 
                 appearanceRow
+                languageRow
             }
 
             if let err = state.errorText {
@@ -74,7 +89,13 @@ struct WelcomeView: View {
         .padding(.horizontal, 24)
         .padding(.vertical, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear(perform: refreshAssociation)
+        .onAppear {
+            refreshAssociation()
+            if let prefs = prefsList.first {
+                state.language = prefs.language
+            }
+        }
+        .id(state.language)
     }
 
     // MARK: - Brand
@@ -100,13 +121,13 @@ struct WelcomeView: View {
         HStack(spacing: 8) {
             if isDefault {
                 Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
-                Text("Default for .eml and .msg files")
+                Text(L10n.t(.defaultForFiles))
                     .font(.system(size: 12))
             } else {
                 Button {
                     setAsDefault()
                 } label: {
-                    Label("Set as default for .eml and .msg", systemImage: "paperclip.badge.ellipsis")
+                    Label(L10n.t(.setAsDefault), systemImage: "paperclip.badge.ellipsis")
                         .frame(width: 240)
                 }
                 .controlSize(.regular)
@@ -115,9 +136,25 @@ struct WelcomeView: View {
         }
     }
 
+    private var languageRow: some View {
+        HStack(spacing: 10) {
+            Text(L10n.t(.language))
+                .font(.system(size: 12))
+                .foregroundStyle(.secondary)
+            Picker("", selection: languageBinding) {
+                ForEach(AppLanguage.allCases) { mode in
+                    Text(mode.pickerLabel).tag(mode)
+                }
+            }
+            .pickerStyle(.segmented)
+            .labelsHidden()
+            .frame(width: 240)
+        }
+    }
+
     private var appearanceRow: some View {
         HStack(spacing: 10) {
-            Text("Appearance")
+            Text(L10n.t(.appearance))
                 .font(.system(size: 12))
                 .foregroundStyle(.secondary)
             Picker("", selection: appearanceBinding) {
@@ -196,6 +233,24 @@ struct WelcomeView: View {
         return types
     }
 
+    private var languageBinding: Binding<AppLanguage> {
+        Binding(
+            get: { state.language },
+            set: { newValue in
+                state.language = newValue
+                let prefs: AppPreferences
+                if let existing = prefsList.first {
+                    prefs = existing
+                } else {
+                    prefs = AppPreferences()
+                    modelContext.insert(prefs)
+                }
+                prefs.language = newValue
+                try? modelContext.save()
+            }
+        )
+    }
+
     private var appearanceBinding: Binding<AppearanceMode> {
         Binding(
             get: { prefsList.first?.appearance ?? .system },
@@ -253,7 +308,7 @@ struct WelcomeView: View {
             if let failure {
                 assocStatus = "Could not set: \(failure.localizedDescription)"
             } else {
-                assocStatus = "ZenaEML Viewer is now the default"
+                assocStatus = L10n.t(.nowDefault)
                 refreshAssociation()
             }
             working = false

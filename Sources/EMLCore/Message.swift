@@ -11,9 +11,53 @@ public struct Message {
         }
     }
 
+    public init(root: Part) {
+        self.root = root
+    }
+
     public init(url: URL) throws {
         let data = try Data(contentsOf: url)
         self.init(data: data)
+    }
+
+    /// Deepest nested `message/rfc822` / `.eml` in the tree (PEC shells, forwards).
+    /// Returns `self` when there is no nested mail.
+    public var innermostMessage: Message {
+        var bestRoot = root
+        var bestDepth = 0
+
+        func considerNested(from part: Part, depth: Int) {
+            let nestedRoot: Part?
+            if !part.parts.isEmpty {
+                nestedRoot = part.parts[0]
+            } else {
+                let data = part.decodedBody()
+                nestedRoot = data.isEmpty ? nil : MIME.parse(data)
+            }
+            guard let nestedRoot else { return }
+            if depth >= bestDepth {
+                bestDepth = depth
+                bestRoot = nestedRoot
+            }
+            walk(nestedRoot, depth: depth)
+        }
+
+        func walk(_ part: Part, depth: Int) {
+            let name = part.filename?.lowercased() ?? ""
+            let isNestedMail = MIME.isNestedMessage(part.contentType)
+                || name.hasSuffix(".eml")
+                || name.hasSuffix(".emlx")
+            if isNestedMail {
+                considerNested(from: part, depth: depth + 1)
+                return
+            }
+            for sub in part.parts {
+                walk(sub, depth: depth)
+            }
+        }
+
+        walk(root, depth: 0)
+        return bestDepth == 0 ? self : Message(root: bestRoot)
     }
 
     public var headers: [(String, String)] { root.rawHeaders }

@@ -12,8 +12,17 @@ final class AppState: ObservableObject {
     @Published var sourceURL: URL?
     @Published var errorText: String?
     @Published var toast: String?
+    @Published var language: AppLanguage = AppLanguage.load() {
+        didSet {
+            language.save()
+            L10n.language = language.resolved
+            objectWillChange.send()
+        }
+    }
 
-    private init() {}
+    private init() {
+        L10n.language = language.resolved
+    }
 
     // MARK: - Loading
 
@@ -24,7 +33,7 @@ final class AppState: ObservableObject {
             self.sourceURL = url
             self.errorText = nil
         } catch {
-            self.errorText = "Failed to open: \(error.localizedDescription)"
+            self.errorText = L10n.t(.failedOpenPrefix) + error.localizedDescription
             self.message = nil
             self.sourceURL = url
         }
@@ -88,7 +97,100 @@ final class AppState: ObservableObject {
         if !saved.isEmpty {
             NSWorkspace.shared.activateFileViewerSelecting(saved)
             let n = saved.count
-            toast = "Saved \(n) file\(n == 1 ? "" : "s") to Downloads"
+            toast = L10n.tf(.savedFilesToDownloads, n, n == 1 ? "" : (L10n.language == .italian ? "" : "s"))
+        }
+    }
+
+    // MARK: - Email PDF
+
+    func exportMessagePDF() {
+        guard let message else { return }
+        let panel = NSSavePanel()
+        panel.allowedContentTypes = [.pdf]
+        panel.nameFieldStringValue = HTMLPDFExporter.suggestedEmailPDFFilename(
+            for: message,
+            sourceURL: sourceURL
+        )
+        panel.canCreateDirectories = true
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+        let invoiceCount = FatturaPA.findInvoices(in: message).count
+        toast = invoiceCount > 0 ? L10n.t(.creatingEmailInvoicePDF) : L10n.t(.creatingEmailPDF)
+        let lang = language.resolved
+        Task { @MainActor in
+            do {
+                let data = try await HTMLPDFExporter.pdfData(for: message, language: lang)
+                try data.write(to: url, options: .atomic)
+                NSWorkspace.shared.activateFileViewerSelecting([url])
+                toast = invoiceCount > 0 ? L10n.t(.emailInvoicePDFSaved) : L10n.t(.emailPDFSaved)
+            } catch {
+                toast = L10n.tf(.emailPDFFailed, error.localizedDescription)
+                NSSound.beep()
+            }
+        }
+    }
+
+    // MARK: - FatturaPA invoice PDF
+
+    /// Invoices found anywhere in the open message (including nested PEC shells).
+    var invoices: [FatturaInvoice] {
+        guard let message else { return [] }
+        return FatturaPA.findInvoices(in: message)
+    }
+
+    func exportInvoicePDF(_ invoice: FatturaInvoice) {
+        let panel = NSSavePanel()
+        panel.allowedContentTypes = [.pdf]
+        panel.nameFieldStringValue = FatturaPA.suggestedPDFFilename(for: invoice)
+        panel.canCreateDirectories = true
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+        toast = L10n.t(.creatingInvoicePDF)
+        let lang = language.resolved
+        Task { @MainActor in
+            do {
+                let data = try await HTMLPDFExporter.pdfData(for: invoice, language: lang)
+                try data.write(to: url, options: .atomic)
+                NSWorkspace.shared.activateFileViewerSelecting([url])
+                toast = L10n.t(.invoicePDFSaved)
+            } catch {
+                toast = L10n.tf(.invoicePDFFailed, error.localizedDescription)
+                NSSound.beep()
+            }
+        }
+    }
+
+    func exportAllInvoicePDFs() {
+        let list = invoices
+        guard !list.isEmpty else { return }
+        if list.count == 1 {
+            exportInvoicePDF(list[0])
+            return
+        }
+        Task { @MainActor in
+            let panel = NSOpenPanel()
+            panel.canChooseFiles = false
+            panel.canChooseDirectories = true
+            panel.canCreateDirectories = true
+            panel.prompt = L10n.t(.savePDFs)
+            panel.message = L10n.tf(.chooseFolderInvoices, list.count)
+            guard panel.runModal() == .OK, let dir = panel.url else { return }
+            var saved: [URL] = []
+            for invoice in list {
+                do {
+                    let data = try await HTMLPDFExporter.pdfData(for: invoice, language: language.resolved)
+                    let target = uniqueURL(in: dir, filename: FatturaPA.suggestedPDFFilename(for: invoice))
+                    try data.write(to: target, options: .atomic)
+                    saved.append(target)
+                } catch {
+                    continue
+                }
+            }
+            if !saved.isEmpty {
+                NSWorkspace.shared.activateFileViewerSelecting(saved)
+                toast = L10n.tf(.savedInvoicePDFs, saved.count, saved.count == 1 ? "" : (L10n.language == .italian ? "" : "s"))
+            } else {
+                toast = L10n.t(.noInvoicePDFs)
+                NSSound.beep()
+            }
         }
     }
 
