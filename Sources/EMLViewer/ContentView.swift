@@ -359,10 +359,14 @@ struct AttachmentChip: View {
     @EnvironmentObject var state: AppState
     @State private var hovered = false
 
+    private var isFatturaXML: Bool {
+        FatturaPA.isFatturaElettronica(part.decodedBody())
+    }
+
     var body: some View {
         Button(action: { state.openAttachment(part) }) {
             HStack(spacing: 10) {
-                FileIcon(part: part)
+                FileIcon(part: part, preferPDFIcon: isFatturaXML)
                     .frame(width: 32, height: 32)
 
                 VStack(alignment: .leading, spacing: 2) {
@@ -371,7 +375,7 @@ struct AttachmentChip: View {
                         .lineLimit(1)
                         .truncationMode(.middle)
                         .frame(maxWidth: 220, alignment: .leading)
-                    Text(sizeString)
+                    Text(isFatturaXML ? "PDF · \(sizeString)" : sizeString)
                         .font(.system(size: 10))
                         .foregroundStyle(.secondary)
                 }
@@ -393,10 +397,17 @@ struct AttachmentChip: View {
         .buttonStyle(.plain)
         .onHover { hovered = $0 }
         .contextMenu {
-            Button("Open") { state.openAttachment(part) }
+            if isFatturaXML {
+                Button(L10n.t(.openAsPDF)) { state.openAttachment(part) }
+                Button(L10n.t(.openOriginalXML)) { state.openAttachmentAsRawFile(part) }
+            } else {
+                Button("Open") { state.openAttachment(part) }
+            }
             Button(L10n.t(.saveAs)) { state.saveAsAttachment(part) }
         }
-        .help("Open \(part.filename ?? "attachment")")
+        .help(isFatturaXML
+              ? L10n.t(.openAsPDF) + " — \(part.filename ?? "fattura.xml")"
+              : "Open \(part.filename ?? "attachment")")
     }
 
     private var sizeString: String {
@@ -410,6 +421,7 @@ struct AttachmentChip: View {
 
 struct FileIcon: NSViewRepresentable {
     let part: Part
+    var preferPDFIcon: Bool = false
 
     func makeNSView(context: Context) -> NSImageView {
         let v = NSImageView()
@@ -424,6 +436,9 @@ struct FileIcon: NSViewRepresentable {
 
     private func icon() -> NSImage {
         let ws = NSWorkspace.shared
+        if preferPDFIcon {
+            return ws.icon(for: .pdf)
+        }
         if let name = part.filename {
             let ext = (name as NSString).pathExtension
             if !ext.isEmpty, let type = UTType(filenameExtension: ext) {

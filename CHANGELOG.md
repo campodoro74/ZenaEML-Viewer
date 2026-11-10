@@ -10,6 +10,7 @@
 - Detect Italian FatturaPA (`FatturaElettronica`) XML inside nested PEC / `.eml` trees; append to email PDF or save separately
 - English / Italian UI + PDF labels (System, English, or Italian)
 - Welcome screen: short what-it-does / how-it-works copy
+- Clicking a FatturaPA `.xml` attachment opens the invoice PDF in Preview (not Xcode)
 
 ## [1.1.0] - 2026-10-27
 

@@ -53,8 +53,11 @@ enum L10n {
         case emailInvoicePDFSaved
         case emailPDFFailed
         case creatingInvoicePDF
+        case openingInvoicePDF
         case invoicePDFSaved
         case invoicePDFFailed
+        case openAsPDF
+        case openOriginalXML
         case savedFilesToDownloads
         case chooseFolderInvoices
         case savePDFs
@@ -106,8 +109,11 @@ enum L10n {
                 .emailInvoicePDFSaved: "Email + invoice PDF saved",
                 .emailPDFFailed: "Email PDF failed: %@",
                 .creatingInvoicePDF: "Creating invoice PDF…",
+                .openingInvoicePDF: "Opening invoice PDF…",
                 .invoicePDFSaved: "Invoice PDF saved",
                 .invoicePDFFailed: "Invoice PDF failed: %@",
+                .openAsPDF: "Open as PDF",
+                .openOriginalXML: "Open original XML…",
                 .savedFilesToDownloads: "Saved %d file%@ to Downloads",
                 .chooseFolderInvoices: "Choose a folder for %d invoice PDFs",
                 .savePDFs: "Save PDFs",
@@ -156,8 +162,11 @@ enum L10n {
                 .emailInvoicePDFSaved: "PDF email + fattura salvato",
                 .emailPDFFailed: "PDF email non riuscito: %@",
                 .creatingInvoicePDF: "Creazione PDF fattura…",
+                .openingInvoicePDF: "Apertura PDF fattura…",
                 .invoicePDFSaved: "PDF fattura salvato",
                 .invoicePDFFailed: "PDF fattura non riuscito: %@",
+                .openAsPDF: "Apri come PDF",
+                .openOriginalXML: "Apri XML originale…",
                 .savedFilesToDownloads: "Salvati %d file%@ in Download",
                 .chooseFolderInvoices: "Scegli una cartella per %d PDF fattura",
                 .savePDFs: "Salva PDF",

@@ -64,6 +64,51 @@ final class AppState: ObservableObject {
             self.errorText = nil
             return
         }
+
+        // FatturaPA XML → render PDF and open in Preview (not Xcode / XML editor).
+        let data = part.decodedBody()
+        if FatturaPA.isFatturaElettronica(data) {
+            openFatturaPDF(FatturaInvoice(filename: part.filename ?? "fattura.xml", xmlData: data))
+            return
+        }
+
+        guard let url = writeToTemp(part) else {
+            NSSound.beep(); return
+        }
+        NSWorkspace.shared.open(url)
+    }
+
+    /// Build a temp PDF for a FatturaPA invoice and open it with Preview.
+    func openFatturaPDF(_ invoice: FatturaInvoice) {
+        toast = L10n.t(.openingInvoicePDF)
+        let lang = language.resolved
+        Task { @MainActor in
+            do {
+                let pdf = try await HTMLPDFExporter.pdfData(for: invoice, language: lang)
+                let tmpDir = FileManager.default.temporaryDirectory
+                    .appendingPathComponent("EMLViewer", isDirectory: true)
+                try? FileManager.default.createDirectory(at: tmpDir, withIntermediateDirectories: true)
+                let url = uniqueURL(in: tmpDir, filename: FatturaPA.suggestedPDFFilename(for: invoice))
+                try pdf.write(to: url, options: .atomic)
+                if let preview = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.Preview") {
+                    try await NSWorkspace.shared.open(
+                        [url],
+                        withApplicationAt: preview,
+                        configuration: NSWorkspace.OpenConfiguration()
+                    )
+                } else {
+                    NSWorkspace.shared.open(url)
+                }
+                toast = nil
+            } catch {
+                toast = L10n.tf(.invoicePDFFailed, error.localizedDescription)
+                NSSound.beep()
+            }
+        }
+    }
+
+    /// Open the raw attachment bytes with the system default app (e.g. XML in Xcode).
+    func openAttachmentAsRawFile(_ part: Part) {
         guard let url = writeToTemp(part) else {
             NSSound.beep(); return
         }
